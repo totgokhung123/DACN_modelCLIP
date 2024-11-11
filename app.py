@@ -10,16 +10,13 @@ from word_processing import VietnameseTextProcessor
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
-
 FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
 EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\source test\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
 
-
 app = Flask(__name__)
-
 
 @app.route('/frames/<path:filename>')
 def serve_frame(filename):
