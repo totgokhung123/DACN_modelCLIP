@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Top Frames</title>
+</head>
+<body>
+    <h1>Search Top 50 Frames</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Enter your query" required>
+        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if query %}
+        <h2>Results for: "{{ query }}"</h2>
+        <div style="display: flex; flex-wrap: wrap;">
+            {% for frame in top_frames %}
+                <div style="margin: 5px;">
+                    <img src="{{ url_for('serve_frame', filename=frame) }}" alt="Frame" width="200px">
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
