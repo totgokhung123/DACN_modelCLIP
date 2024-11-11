@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory
+from flask import Flask, request, render_template, send_from_directory, Response,send_file
 import os
 import numpy as np
 import torch
@@ -17,14 +17,11 @@ text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
 
-
 app = Flask(__name__)
-
 
 @app.route('/frames/<path:filename>')
 def serve_frame(filename):
     return send_from_directory(FRAMES_DIR, filename)
-
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -77,5 +74,19 @@ def search_top_frames(query, top_k):
     # Load image file names
     all_files = [f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
     return [all_files[i] for i in top_indices]
+
+@app.route('/video_popup')
+def video_popup():
+    frameidx = request.args.get('frameidx', default='0')
+    return render_template('video_popup.html', frameidx=frameidx)
+
+@app.route('/video')
+def video():
+    return render_template('video_popup.html')
+
+@app.route('/serve_video')
+def serve_video():
+
+    return send_file("E:\\THIHE\\testfitty one\\videotesst.mp4", mimetype='video/mp4')
 if __name__ == "__main__":
     app.run(debug=True)
