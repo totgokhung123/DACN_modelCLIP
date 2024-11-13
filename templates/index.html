@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Search Top Frames</title>
-</head>
-<body>
+{% extends "index_snow_test_4.html" %}
+{% block title %}
+Search Top Frames
+{% endblock %}
+
+{% block content %}
     <h1>Search Top 50 Frames</h1>
     <form method="POST">
         <input type="text" name="query" placeholder="Enter your query" required>
@@ -21,5 +21,5 @@
             {% endfor %}
         </div>
     {% endif %}
-</body>
-</html>
+
+{% endblock %}

@@ -35,8 +35,8 @@ def extract_and_save_embeddings_from_folder(folder_path, model_name, output_file
     print(f"Embeddings saved to {output_file}")
 
 
-folder_path = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"  
+folder_path = "D:\\code\\projects\\git\\Data\\khung_hinh_1_1"  
 model_name = "ViT-B/32"  
-output_file = "E:\\Đồ án chuyên ngành\\source test\\embedding\\image_embeddings.npy"  
+output_file = "D:\\code\\projects\\git\\Data\\embedding\\image_embeddings.npy"  
 
 extract_and_save_embeddings_from_folder(folder_path, model_name, output_file)

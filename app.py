@@ -1,8 +1,8 @@
 from flask import Flask, request, render_template, send_from_directory
 import os
 import numpy as np
-import torch
 import clip
+import torch
 from PIL import Image
 from tqdm import tqdm
 from word_processing import VietnameseTextProcessor
@@ -10,8 +10,8 @@ from word_processing import VietnameseTextProcessor
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
-FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
-EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\source test\\embedding\\image_embeddings.npy"
+FRAMES_DIR = "D:\\code\\projects\\git\\Data\\khung_hinh_1_1"
+EMBEDDINGS_FILE = "D:\\code\\projects\\git\\Data\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
@@ -37,7 +37,7 @@ def index():
         top_k = min(max(1, top_k), total_frames)  
         
         processed_text = text_processor.preprocess_and_translate(query)
-        print("Câu truy vấn đã xử lý:", processed_text)
+        print("Cau truy van da xu ly:", processed_text)
         top_frames = search_top_frames(processed_text, top_k)
         
         return render_template("index.html", query=query, top_frames=top_frames)
@@ -63,7 +63,7 @@ def search_top_frames(query, top_k):
 
     text_features = text_features / np.linalg.norm(text_features, axis=-1, keepdims=True)
 
-    embeddings = np.load("E:\\Đồ án chuyên ngành\\source test\\embedding\\image_embeddings.npy")
+    embeddings = np.load("D:\\code\\projects\\git\\Data\\embedding\\image_embeddings.npy")
     embeddings = embeddings / np.linalg.norm(embeddings, axis=-1, keepdims=True)
 
     # Compute cosine similarities
