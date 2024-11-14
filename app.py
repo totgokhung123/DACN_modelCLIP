@@ -10,8 +10,8 @@ from word_processing import VietnameseTextProcessor
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
-FRAMES_DIR = "D:\\code\\projects\\git\\Data\\khung_hinh_1_1"
-EMBEDDINGS_FILE = "D:\\code\\projects\\git\\Data\\embedding\\image_embeddings.npy"
+FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
+EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
@@ -62,7 +62,7 @@ def search_top_frames(query, top_k):
 
     text_features = text_features / np.linalg.norm(text_features, axis=-1, keepdims=True)
 
-    embeddings = np.load("D:\\code\\projects\\git\\Data\\embedding\\image_embeddings.npy")
+    embeddings = np.load("E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy")
     embeddings = embeddings / np.linalg.norm(embeddings, axis=-1, keepdims=True)
 
     similarities = np.dot(embeddings, text_features.T).flatten()

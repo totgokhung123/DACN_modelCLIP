@@ -36,8 +36,8 @@ def extract_frames_from_video(video_path, output_dir, threshold=30.0):
     video_manager.release()
     print("Trich xuat hoan tat.")
 
-video_path = "D:\\code\\projects\\git\\Data\\video\\L01_V001.mp4" 
-output_dir = "D:\\code\\projects\\git\\Data\\khung_hinh_1_1"  
+video_path = "E:\\THIHE\\testfitty one\\videotesst.mp4" 
+output_dir = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"  
 
 
 # Gọi hàm trích xuất khung hình
