@@ -29,15 +29,16 @@ def extract_frames_from_video(video_path, output_dir, threshold=30.0):
             if ret:
                 frame_filename = os.path.join(output_dir, f"{frame_idx}.jpg")
                 cv2.imwrite(frame_filename, frame)
-                print(f"Đã lưu {frame_filename}")
+                print(f"da luu {frame_filename}")
 
         cap.release()
 
     video_manager.release()
-    print("Trích xuất hoàn tất.")
+    print("Trich xuat hoan tat.")
 
-video_path = "E:\\THIHE\\testfitty one\\videotesst.mp4" 
-output_dir = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"  
+video_path = "D:\\code\\projects\\git\\Data\\video\\L01_V001.mp4" 
+output_dir = "D:\\code\\projects\\git\\Data\\khung_hinh_1_1"  
+
 
 # Gọi hàm trích xuất khung hình
 extract_frames_from_video(video_path, output_dir)

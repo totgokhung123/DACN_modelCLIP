@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tìm kiếm hình ảnh</title>
-    <style>
-        .frame-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .frame-gallery img {
-            width: 150px;
-            height: auto;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Tìm kiếm hình ảnh</h1>
+
     <form method="POST" action="/">
         <label for="query">Nhập truy vấn:</label>
         <input type="text" id="query" name="query" value="{{ query }}">
@@ -25,6 +7,17 @@
         <input type="number" id="top_k" name="top_k" min="1" value="50">
         <br>
         <button type="submit">Tìm kiếm</button>
+{% extends "index_snow_test_4.html" %}
+{% block title %}
+Search Top Frames
+{% endblock %}
+
+{% block content %}
+    <h1>Search Top 50 Frames</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Enter your query" required>
+        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
+        <button type="submit">Search</button>
     </form>
 
     {% if top_frames %}
@@ -36,34 +29,4 @@
             {% endfor %}
         </div>
     {% endif %}
-</body>
-<script>
-    const video = document.querySelector("//");
-
-function startPreview() {
-  video.muted = true;
-  video.currentTime = 1;
-  video.playbackRate = 0.5;
-  video.play();
-}
-
-function stopPreview() {
-  video.currentTime = 0;
-  video.playbackRate = 1;
-  video.pause();
-}
-
-let previewTimeout = null;
-
-video.addEventListener("mouseenter", () => {
-  startPreview();
-  previewTimeout = setTimeout(stopPreview, 4000);
-});
-
-video.addEventListener("mouseleave", () => {
-  clearTimeout(previewTimeout);
-  previewTimeout = null;
-  stopPreview();
-});
-</script>
-</html>
+{% endblock %}
