@@ -66,12 +66,10 @@ def search_top_frames(query, top_k):
     embeddings = np.load("E:\\Đồ án chuyên ngành\\source test\\embedding\\image_embeddings.npy")
     embeddings = embeddings / np.linalg.norm(embeddings, axis=-1, keepdims=True)
 
-    # Compute cosine similarities
     similarities = np.dot(embeddings, text_features.T).flatten()
 
     top_indices = np.argsort(similarities)[-top_k:][::-1] 
 
-    # Load image file names
     all_files = [f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
     return [all_files[i] for i in top_indices]
 
