@@ -1,32 +1,131 @@
-
-    <form method="POST" action="/">
-        <label for="query">Nhập truy vấn:</label>
-        <input type="text" id="query" name="query" value="{{ query }}">
-        <br>
-        <label for="top_k">Số lượng ảnh hiển thị (top_k):</label>
-        <input type="number" id="top_k" name="top_k" min="1" value="50">
-        <br>
-        <button type="submit">Tìm kiếm</button>
 {% extends "index_snow_test_4.html" %}
 {% block title %}
 Search Top Frames
 {% endblock %}
 
 {% block content %}
+<style>
+    .frame-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .frame-gallery img {
+        width: 150px;
+        height: auto;
+        cursor: pointer;
+    }
+    .center-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 70%;
+        max-width: 800px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .modal.show {
+        display: block;
+    }
+    .blur-background {
+        filter: blur(5px);
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 500;
+        display: none;
+    }
+    .overlay.show {
+        display: block;
+    }
+</style>
+
+<div class="center-content">
     <h1>Search Top 50 Frames</h1>
-    <form method="POST">
+    <form method="POST" action="/">
         <input type="text" name="query" placeholder="Enter your query" required>
         <input type="number" name="top_k" placeholder="Enter top K" required min="1">
         <button type="submit">Search</button>
     </form>
 
+    <h2>Or</h2>
+    <!-- Form for Image Query -->
+    <form method="POST" action="/search_image" enctype="multipart/form-data">
+        <input type="file" name="image_files" accept="image/*" multiple>
+        <input type="text" name="image_url" placeholder="Enter image URL">
+        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
+        <button type="submit">Search by Image</button>
+    </form>
+
     {% if top_frames %}
-        <div class="frame-gallery">
+        <div class="frame-gallery" style="justify-content: space-between; padding: 10px">
             {% for frame in top_frames %}
-                <a href="/video_popup?frameidx={{ frame.split('.')[0] }}">
+                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}">
                     <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}">
                 </a>
             {% endfor %}
         </div>
     {% endif %}
+</div>
+
+<!-- Modal and Overlay -->
+<div class="overlay" id="overlay"></div>
+<div class="modal" id="video-modal">
+    <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
+    <video id="video-player" width="100%" controls>
+        <source src="" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+    </video>
+    <button onclick="closeModal()">Đóng</button>
+</div>
+
+<script>
+    document.querySelectorAll('.frame-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            const frameIdx = this.getAttribute('data-frameidx');
+            document.getElementById('frameidx-display').innerText = frameIdx;
+            
+            const videoPlayer = document.getElementById('video-player');
+            videoPlayer.querySelector('source').src = "/serve_video";
+            videoPlayer.load();
+            videoPlayer.currentTime = frameIdx / 25;
+            //const videoPlayer = document.getElementById('video-player');
+            //videoPlayer.src = `/video_popup?frameidx=${frameIdx}`;
+            //videoPlayer.currentTime = frameIdx / 25;
+
+            document.getElementById('video-modal').classList.add('show');
+            document.getElementById('overlay').classList.add('show');
+            document.querySelector('.center-content').classList.add('blur-background');
+        });
+    });
+
+    function closeModal() {
+        document.getElementById('video-modal').classList.remove('show');
+        document.getElementById('overlay').classList.remove('show');
+        document.querySelector('.center-content').classList.remove('blur-background');
+        const videoPlayer = document.getElementById('video-player');
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+    }
+</script>
 {% endblock %}

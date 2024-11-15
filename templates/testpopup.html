@@ -1,0 +1,44 @@
+{% extends "index_snow_test_4.html" %}
+{% block title %}
+Search Top Frames
+{% endblock %}
+
+{% block content %}
+<style>
+    .frame-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .frame-gallery img {
+        width: 150px;
+        height: auto;
+        cursor: pointer;
+    }
+    .center-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+</style>
+<div  class="center-content">
+    <h1>Search Top 50 Frames</h1>
+    <form method="POST" action="/">
+        <input type="text" name="query" placeholder="Enter your query" required>
+        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if top_frames %}
+        <div class="frame-gallery" style="justify-content: space-between; padding: 10px">
+            {% for frame in top_frames %}
+                <a href="/video_popup?frameidx={{ frame.split('.')[0] }}">
+                    <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}">
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
