@@ -5,15 +5,46 @@ Search Top Frames
 
 {% block content %}
 <style>
-    .frame-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+    
+        /* Container bao quanh hình ảnh và checkbox */
+    .frame-container {
+        position: relative;
+        display: inline-block;
     }
+
+    /* Checkbox hiển thị ở góc trên bên trái */
+    .frame-checkbox {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 10;
+        width: 20px;
+        height: 20px;
+        display: none; /* Ẩn checkbox theo mặc định */
+        cursor: pointer;
+    }
+
+    /* Hiển thị checkbox khi di chuột vào container */
+    .frame-container:hover .frame-checkbox {
+        display: block; /* Hiển thị checkbox */
+        border-color: rgba(255, 69, 0, 0.7);
+    }
+    /* Checkbox luôn hiển thị khi container có lớp 'checked' */
+    .frame-container.checked .frame-checkbox {
+        display: block;
+    }
+
+    /* Bổ sung kiểu dáng cho frame-gallery */
     .frame-gallery img {
         width: 150px;
         height: auto;
         cursor: pointer;
+        border-radius: 5px; /* Tuỳ chọn: làm bo tròn góc hình ảnh */
+        transition: transform 0.3s;
+    }
+
+    .frame-gallery img:hover {
+        transform: scale(1.05); /* Tuỳ chọn: phóng to nhẹ khi di chuột */
     }
     .center-content {
         display: flex;
@@ -51,42 +82,140 @@ Search Top Frames
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 500;
-        display: none;
-    }
+        background-color: rgba(0, 0, 0, 0.5); /* Hiệu ứng viền mờ đen */
+        display:none;
+    }  
     .overlay.show {
         display: block;
     }
 </style>
-
-<div class="center-content">
-    <h1>Search Top 50 Frames</h1>
-    <form method="POST" action="/">
-        <input type="text" name="query" placeholder="Enter your query" required>
-        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
-        <button type="submit">Search</button>
-    </form>
-
-    <h2>Or</h2>
-    <!-- Form for Image Query -->
-    <form method="POST" action="/search_image" enctype="multipart/form-data">
-        <input type="file" name="image_files" accept="image/*" multiple>
-        <input type="text" name="image_url" placeholder="Enter image URL">
-        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
-        <button type="submit">Search by Image</button>
-    </form>
-
-    {% if top_frames %}
-        <div class="frame-gallery" style="justify-content: space-between; padding: 10px">
-            {% for frame in top_frames %}
-                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}">
-                    <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}">
+<div class="border border-black/10 dark:border-white/10 p-5 rounded-md" style="padding: 10px">
+    <div x-data="{activepillstabs:'profile'}">
+        <ul class="flex flex-wrap text-sm font-medium text-center text-black/50">
+            <li class="mr-2">
+                <a href="javascript:;"
+                @click="activepillstabs = activepillstabs === 'profile' ? '' : 'profile'"
+                :class="activepillstabs === 'profile' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'"
+                class="inline-block rounded-lg px-4 py-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                    </svg>
+                    Query with text
                 </a>
+            </li>
+            <li class="mr-2">
+                <a href="javaScript:;" 
+                @click="activepillstabs = activepillstabs === 'dashboard' ? '' : 'dashboard'"
+                 :class="activepillstabs === 'dashboard' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'" class="inline-block rounded-lg px-4 py-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path>
+                    </svg>
+                    Query with image
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content mt-3 text-[13px]">
+            <div x-show="activepillstabs === 'profile'" class="">
+                <div style="display: flex;flex-direction: row">
+                    <form method="POST" action="/" style="width: 120%">
+                        <div style="display: flex;flex-direction: row">
+                            <input type="text" name="query" placeholder="Enter your query"
+                            class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                            required>
+                            <input type="number" name="top_k" placeholder="Enter top K" style="width: 40%"
+                            class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                            required min="1">
+                            <button type="submit" class="btn py-2 px-5 text-[15px]">Search</button>                            
+                        </div>                        
+                    </form>
+                    <form method="GET" action="/reset">
+                        <div style="display: flex;flex-direction: row">
+                            <button type="submit" class="btn py-2 px-5 text-[15px]">Reset</button>
+                        </div>   
+                    </form>
+                </div>        
+            </div>
+            <div x-show="activepillstabs === 'dashboard'" class="">
+                <div x-data="{activebarwithicon:'profile'}">
+                    <ul class="text-sm text-center text-black/50 dark:text-white/50 divide-x shadow dark:shadow-white/10 divide-black/20 dark:divide-white/20 rounded-lg sm:flex w-full">
+                        <li class="w-full">
+                            <a href="javaScript:;" @click="activebarwithicon = 'profile'" :class="activebarwithicon === 'profile' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4 sm:rounded-l-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 3px" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM92.69,56l16,16H40V56ZM216,200H40V88H216Zm-88-88a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V152H104a8,8,0,0,1,0-16h16V120A8,8,0,0,1,128,112Z"></path>
+                                </svg>
+                                From device
+                            </a>
+                        </li>
+                        <li class="w-full">
+                            <a href="javaScript:;" @click="activebarwithicon = 'dashboard'" :class="activebarwithicon === 'dashboard' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 3px" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154.37,88H101.63C107,69.66,116,53.13,128,40.11,140,53.13,149,69.66,154.37,88Zm19.84,16h38.46a88.15,88.15,0,0,1,0,48H174.21a161.79,161.79,0,0,0,0-48Zm32.16-16H170.94a142.39,142.39,0,0,0-20.26-45A88.37,88.37,0,0,1,206.37,88ZM105.32,43A142.39,142.39,0,0,0,85.06,88H49.63A88.37,88.37,0,0,1,105.32,43ZM49.63,168H85.06a142.39,142.39,0,0,0,20.26,45A88.37,88.37,0,0,1,49.63,168Zm101.05,45a142.39,142.39,0,0,0,20.26-45h35.43A88.37,88.37,0,0,1,150.68,213Z"></path>
+                                </svg>
+                                From link Url
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-3 text-[13px]">
+                        <div x-show="activebarwithicon === 'profile'" class="">
+                            <div style="display: flex;flex-direction: row">
+                                <form method="POST" action="/search_image" style="width:120%" enctype="multipart/form-data">
+                                    <div style="display: flex;flex-direction: row">
+                                        <input type="file" name="image_files" accept="image/*" multiple>
+                                        <input type="number" name="top_k" placeholder="Enter top K" 
+                                        class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                                        required min="1">
+                                        <button type="submit" class="btn py-2 px-5 text-[15px]">Search</button>
+                                    </div>
+                                </form>
+                                <form method="GET" action="/reset">
+                                    <div style="display: flex;flex-direction: row">
+                                        <button type="submit" class="btn py-2 px-5 text-[15px]">Reset</button>
+                                    </div>   
+                                </form>
+                            </div>
+                        </div>
+                        <div x-show="activebarwithicon === 'dashboard'" class="">
+                            <div style="display: flex;flex-direction: row">
+                                <form method="POST" action="/search_image" style="width:120%" enctype="multipart/form-data">
+                                    <div style="display: flex;flex-direction: row" >
+                                        <input type="text" name="image_url" placeholder="Enter image URL"
+                                        class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;">
+                                        <input type="number" name="top_k" placeholder="Enter top K" style="width:50%"
+                                        class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                                        required min="1">
+                                        <button type="submit" class="btn py-2 px-5 text-[15px]">Search</button>                       
+                                    </div>
+                                </form>
+                                <form method="GET" action="/reset">
+                                    <div style="display: flex;flex-direction: row">
+                                        <button type="submit" class="btn py-2 px-5 text-[15px]">Reset</button>
+                                    </div>   
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</div>
+<input type="text" id="tag-name" placeholder="Nhập tên tag" />
+<button id="save-tags-button">Lưu Tag</button>
+<div class="center-content">
+    {% if top_frames %}
+        <div class="frame-gallery"  style="justify-content: space-between; padding: 10px">
+            {% for frame in top_frames %}
+            <div class="frame-container">
+                <input type="checkbox" class="frame-checkbox outline-Danger form-checkbox" style="color: rgba(255, 69, 0, 0.7)" data-frame="{{ frame }}" >
+                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}">                   
+                   <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}">
+                </a>
+            </div>
             {% endfor %}
         </div>
     {% endif %}
 </div>
-
-<!-- Modal and Overlay -->
 <div class="overlay" id="overlay"></div>
 <div class="modal" id="video-modal">
     <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
@@ -96,7 +225,6 @@ Search Top Frames
     </video>
     <button onclick="closeModal()">Đóng</button>
 </div>
-
 <script>
     document.querySelectorAll('.frame-link').forEach(link => {
         link.addEventListener('click', function(event) {
@@ -109,16 +237,11 @@ Search Top Frames
             videoPlayer.querySelector('source').src = "/serve_video";
             videoPlayer.load();
             videoPlayer.currentTime = frameIdx / 25;
-            //const videoPlayer = document.getElementById('video-player');
-            //videoPlayer.src = `/video_popup?frameidx=${frameIdx}`;
-            //videoPlayer.currentTime = frameIdx / 25;
-
             document.getElementById('video-modal').classList.add('show');
             document.getElementById('overlay').classList.add('show');
             document.querySelector('.center-content').classList.add('blur-background');
         });
     });
-
     function closeModal() {
         document.getElementById('video-modal').classList.remove('show');
         document.getElementById('overlay').classList.remove('show');
@@ -127,5 +250,207 @@ Search Top Frames
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
     }
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll(".frame-checkbox");
+        let lastCheckedIndex = null; 
+
+ 
+        function handleShiftClick(currentIndex, isChecked) {
+            if (lastCheckedIndex !== null) {
+ 
+                const start = Math.min(lastCheckedIndex, currentIndex);
+                const end = Math.max(lastCheckedIndex, currentIndex);
+                for (let i = start; i <= end; i++) {
+                    checkboxes[i].checked = isChecked;
+                    const frameContainer = checkboxes[i].closest(".frame-container");
+                    if (isChecked) {
+                        frameContainer.classList.add("checked");
+                    } else {
+                        frameContainer.classList.remove("checked");
+                    }
+                }
+            }
+        }
+
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener("change", function (event) {
+                const frameContainer = this.closest(".frame-container");
+                if (event.shiftKey && lastCheckedIndex !== null) {
+                    // Nếu Shift được nhấn, xử lý chọn dải checkbox
+                    handleShiftClick(index, this.checked);
+                } else {
+                    // Nếu không nhấn Shift, chỉ xử lý checkbox hiện tại
+                    if (this.checked) {
+                        frameContainer.classList.add("checked");
+                    } else {
+                        frameContainer.classList.remove("checked");
+                    }
+                }
+
+                lastCheckedIndex = index;
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const saveButton = document.getElementById("save-tags-button");
+        const checkboxes = document.querySelectorAll(".frame-checkbox");
+        const tagNameInput = document.getElementById("tag-name");
+
+        saveButton.addEventListener("click", async () => {
+            const selectedFrames = [];
+            const tagName = tagNameInput.value.trim();
+
+            // Thu thập danh sách các ảnh được chọn
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    selectedFrames.push(checkbox.getAttribute("data-frame"));
+                }
+            });
+
+            // Kiểm tra tên tag và danh sách ảnh được chọn
+            if (!tagName) {
+                alert("Vui lòng nhập tên tag!");
+                return;
+            }
+            if (selectedFrames.length === 0) {
+                alert("Vui lòng chọn ít nhất một ảnh để lưu tag!");
+                return;
+            }
+
+            try {
+                const response = await fetch("/save_tags", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ tag: tagName, frames: selectedFrames }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert("Tags đã được lưu thành công!");
+
+                    // Nếu có URL chuyển hướng, điều hướng về trang đó
+                    if (data.redirect_url) {
+                        window.location.href = data.redirect_url;
+                    }
+                } else {
+                    alert(data.error || "Có lỗi xảy ra khi lưu Tags.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Không thể kết nối với server.");
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+{% block tag %}
+<ul x-data="tagMenu()" class="relative h-[calc(100vh-58px)] flex flex-col gap-1 overflow-y-auto overflow-x-hidden p-4 py-0" x-data="{ activeMenu: 'dashboard' }">
+    <li class="menu nav-item">
+        <a href="javaScript:;" class="nav-link group text-black dark:text-white" :class="{'active' : activeMenu === 'dashboard'}" @click="activeMenu === 'dashboard' ? activeMenu = null : activeMenu = 'dashboard'">
+            <div class="text-black/50 dark:text-white/20 w-4 h-4 flex items-center justify-center" :class="{'!rotate-90' : activeMenu === 'dashboard'}">
+                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.659675 9.35355C0.446775 9.15829 0.446775 8.84171 0.659675 8.64645L4.25 5.35355C4.4629 5.15829 4.4629 4.84171 4.25 4.64645L0.659675 1.35355C0.446776 1.15829 0.446776 0.841709 0.659675 0.646446C0.872575 0.451184 1.21775 0.451185 1.43065 0.646446L5.02098 3.93934C5.65967 4.52513 5.65968 5.47487 5.02098 6.06066L1.43065 9.35355C1.21775 9.54882 0.872574 9.54882 0.659675 9.35355Z" fill="currentcolor" />
+                </svg>
+            </div>
+            <div class="flex items-center">
+                <svg class="w-5 h-5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.20007 18.2C4.06372 17.4747 3.9967 16.738 4.00012 16C3.99854 13.5182 4.76721 11.0972 6.2002 9.07092C7.63318 7.04456 9.65967 5.51306 12.0001 4.6875V13.6875L4.20007 18.2Z" fill="black" fill-opacity="0.1" />
+                    <path d="M17 16V4C17 3.44772 16.5523 3 16 3C15.4477 3 15 3.44772 15 4V16C15 16.5523 15.4477 17 16 17C16.5523 17 17 16.5523 17 16Z" fill="currentcolor" />
+                    <path d="M5.11288 21.1336L5.11213 21.1341C4.88247 21.2667 4.71492 21.4852 4.64633 21.7414C4.62374 21.8257 4.6123 21.9127 4.6123 22C4.6123 22.0106 4.61247 22.0212 4.61281 22.0317C4.61804 22.1965 4.66392 22.3574 4.74638 22.5002C4.92504 22.8095 5.25511 23 5.6123 23C5.62784 23 5.64337 22.9996 5.65889 22.9989C5.81854 22.9915 5.97408 22.9459 6.11248 22.8659L6.11323 22.8655L26.8875 10.8659C27.1968 10.6873 27.3873 10.3572 27.3873 10C27.3873 9.98447 27.3869 9.96894 27.3862 9.95342C27.3788 9.79377 27.3332 9.63822 27.2532 9.49983C27.1206 9.27017 26.9021 9.10261 26.6459 9.03402C26.5616 9.01144 26.4746 9 26.3873 9C26.3767 9 26.3662 9.00017 26.3556 9.0005C26.1908 9.00573 26.0299 9.05162 25.8871 9.13407L5.11288 21.1336Z" fill="currentcolor" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5009 14.5531L4.70089 19.0656C4.47132 19.1984 4.1984 19.2346 3.94216 19.1662C3.68592 19.0977 3.46735 18.9303 3.33454 18.7008C3.27789 18.6028 3.23827 18.496 3.21736 18.3849C3.21736 18.3849 2.99459 17.2005 3.00013 15.9954C3.00013 15.9954 2.99749 11.8678 5.38375 8.4935C5.38375 8.4935 7.77001 5.11918 11.6675 3.74445C11.9176 3.65622 12.1925 3.67097 12.4318 3.78545C12.671 3.89992 12.855 4.10475 12.9432 4.35486C12.9809 4.46172 13.0001 4.5742 13.0001 4.6875V13.6875C13.0001 14.0445 12.8099 14.3743 12.5009 14.5531ZM5.01273 16.5746L11.0001 13.1107V6.19572C11.0001 6.19572 8.61014 7.39503 7.01668 9.64828C7.01668 9.64828 4.9979 12.503 5.00011 16.0046C5.00011 16.0046 4.9988 16.2903 5.01273 16.5746Z" fill="currentcolor" />
+                    <path d="M10.5588 25.5608C8.00169 24.1059 6.51229 21.5688 6.51229 21.5688C6.37802 21.34 6.1584 21.174 5.90173 21.1072C5.8195 21.0858 5.73487 21.075 5.64991 21.075C5.63698 21.075 5.62406 21.0753 5.61115 21.0758C5.44642 21.0821 5.28582 21.1292 5.14365 21.2126C4.83778 21.3922 4.6499 21.7203 4.6499 22.075L4.64991 22.0779C4.65042 22.2549 4.6979 22.4286 4.78752 22.5813C6.54772 25.5797 9.56976 27.2991 9.56976 27.2991C12.5918 29.0186 16.0687 28.9998 16.0687 28.9998C19.5456 28.981 22.5489 27.2291 22.5489 27.2291C25.5522 25.4772 27.2799 22.4599 27.2799 22.4599C29.0077 19.4426 28.9985 15.9657 28.9985 15.9657C28.9893 12.4887 27.2457 9.48061 27.2457 9.48061C25.502 6.47249 22.4895 4.73644 22.4895 4.73644C19.477 3.00039 16 3 16 3C15.9389 3 15.878 3.00558 15.8181 3.01667C15.344 3.10435 15 3.51778 14.9999 3.99989C14.9999 4.01594 15.0003 4.03196 15.0011 4.04792C15.013 4.29624 15.1169 4.53122 15.2927 4.70702C15.4802 4.89458 15.7346 4.99997 15.9998 5H16.0002C18.942 5.00045 21.4909 6.4693 21.4909 6.4693C24.0399 7.93826 25.5153 10.4836 25.5153 10.4836C26.9907 13.0289 26.9985 15.9709 26.9985 15.9709C27.0063 18.913 25.5443 21.4661 25.5443 21.4661C24.0824 24.0191 21.5411 25.5016 21.5411 25.5016C18.9999 26.984 16.0579 26.9998 16.0579 26.9998C13.1159 27.0157 10.5588 25.5608 10.5588 25.5608Z" fill="currentcolor" />
+                </svg>
+                <span class="pl-1">Dashboard</span>
+            </div>
+        </a>
+        <ul x-cloak x-show="activeMenu === 'dashboard'" x-collapse class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" >
+            {% for tag in tags %}
+            <li>                
+                <a href="{{ url_for('index') }}?tag_name={{ tag }}" class="text-blue-500 hover:underline" style="justify-content: space-between">                                 
+                    <input type="checkbox" class="outline-Danger form-checkbox">
+                    <span>{{ tag }}</span>              
+                </a>  
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+
+<script>
+    // Hàm tải ảnh từ server khi chọn tag
+    function loadImagesForTag(tag) {
+        fetch(`/load-images?tag=${tag}`) 
+            .then(response => response.json())
+            .then(data => {
+                const gallery = document.getElementById('image-gallery');
+                gallery.innerHTML = ''; // Xóa các ảnh cũ trước khi tải mới
+
+                data.images.forEach(frame => {
+                    const frameContainer = document.createElement('div');
+                    frameContainer.className = 'frame-container';
+
+                    // Input checkbox
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.className = 'frame-checkbox outline-primary form-checkbox';
+                    checkbox.dataset.frame = frame;
+
+                    // Link chứa ảnh
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.className = 'frame-link';
+                    link.dataset.frameidx = frame.split('.')[0];
+
+                    // Ảnh
+                    const img = document.createElement('img');
+                    img.src = `/frames/${frame}`;
+                    img.alt = frame;
+                    img.className = 'w-full h-auto rounded shadow-md';
+
+                    link.appendChild(img);
+                    frameContainer.appendChild(checkbox);
+                    frameContainer.appendChild(link);
+
+                    gallery.appendChild(frameContainer);
+                });
+            })
+            .catch(error => console.error('Error loading images:', error));
+    }
+</script>
+<script>
+    function tagMenu() {
+        return {
+            activeMenu: null,
+            tags: [],
+            toggleMenu(menu) {
+                this.activeMenu = this.activeMenu === menu ? null : menu;
+            },
+            loadTags() {
+                // Tải danh sách tag từ backend
+                fetch('/get-tags')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.tags = data;
+                    })
+                    .catch(error => console.error('Error loading tags:', error));
+            },
+            init() {
+                this.loadTags(); 
+            }
+        };
+    }
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('tagMenu', tagMenu);
+    });
 </script>
 {% endblock %}

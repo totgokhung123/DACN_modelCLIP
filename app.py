@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory, Response,send_file,url_for
+from flask import Flask, request, render_template, send_from_directory, Response,send_file,url_for, jsonify
 import os
 from io import BytesIO
 import numpy as np
@@ -9,7 +9,9 @@ from tqdm import tqdm
 import requests
 import base64
 import re
+import json
 from word_processing import VietnameseTextProcessor
+from pathlib import Path
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
@@ -26,31 +28,49 @@ app = Flask(__name__)
 def serve_frame(filename):
     return send_from_directory(FRAMES_DIR, filename)
 
+@app.route('/reset')
+def reset():
+    all = sorted([f.name for f in Path(FRAMES_DIR).iterdir()], key=lambda x: int(Path(x).stem))
+    tags = load_tags_from_file()
+    return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
+
+def load_tags_from_file():
+    with open('tags.json', 'r') as file:
+        return json.load(file)
+
 @app.route("/", methods=["GET", "POST"])
 def index():
+    all = sorted([f.name for f in Path(FRAMES_DIR).iterdir()], key=lambda x: int(Path(x).stem))
+    tags = load_tags_from_file()
+
     if request.method == "POST":
         query = request.form.get("query")
-        top_k = request.form.get("top_k", 50)  
-        # image_file = request.files.get("image_file")
-        # image_url = request.form.get("image_url")
-        try:
-            top_k = int(float(top_k))  
-        except ValueError:
-            top_k = 50  
+        top_k = request.form.get("top_k", 50)
 
-        total_frames = len([f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
-        top_k = min(max(1, top_k), total_frames)  
-        # if image_file or image_url:
-        #     image_features = process_image_query(image_file, image_url)
-        #     top_frames = search_top_frames_by_image(image_features, top_k)
-        # else:
+        try:
+            top_k = int(float(top_k))
+        except ValueError:
+            top_k = 50
+
+        total_frames = len([f for f in Path(FRAMES_DIR).iterdir()])
+        top_k = min(max(1, top_k), total_frames)
         processed_text = text_processor.preprocess_and_translate(query)
-        print("Cau truy van da xu ly:", processed_text)
+        print("Câu truy vấn đã xử lý:", processed_text)
         top_frames = search_top_frames(processed_text, top_k)
-       
-        
         return render_template("index.html", query=query, top_frames=top_frames)
-    return render_template("index.html", query=None, top_frames=[])
+
+    # Xử lý khi có GET request (lấy `tag_name` từ URL)
+    tag_name = request.args.get("tag_name")
+    if tag_name:
+        # Lọc ảnh theo tag
+        tag = next((t for t in tags if t["tag"] == tag_name), None)
+        if tag:
+            filtered_frames = tag["frames"]
+        else:
+            filtered_frames = []  
+        return render_template("index.html", query=None, top_frames=filtered_frames, current_tag=tag_name, tags=[t['tag'] for t in tags])
+    # Nếu không có tag_name, hiển thị tất cả các frame
+    return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
 @app.route("/search_image", methods=["POST"])
 def search_image():
     top_k = int(request.form.get("top_k", 50))
@@ -60,20 +80,19 @@ def search_image():
         top_k = 50  
     total_frames = len([f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
     top_k = min(max(1, top_k), total_frames)  
-    image_files = request.files.getlist("image_files")  # Retrieve multiple files
+    image_files = request.files.getlist("image_files") 
     image_url = request.form.get("image_url")
-    print(image_url)
     image_features_list = []
-
+    print(image_files)
     # # Process uploaded image files
-    # if image_files:
-    #     for image_file in image_files:
-    #         image = Image.open(image_file).convert("RGB")
-    #         image_input = preprocess(image).unsqueeze(0).to(device)
-    #         with torch.no_grad():
-    #             image_features = model.encode_image(image_input).cpu().numpy()
-    #         image_features = image_features / np.linalg.norm(image_features, axis=-1, keepdims=True)
-    #         image_features_list.append(image_features)
+    if (image_files != ""):
+        for image_file in image_files:
+            image = Image.open(image_file).convert("RGB")
+            image_input = preprocess(image).unsqueeze(0).to(device)
+            with torch.no_grad():
+                image_features = model.encode_image(image_input).cpu().numpy()
+            image_features = image_features / np.linalg.norm(image_features, axis=-1, keepdims=True)
+            image_features_list.append(image_features)
 
     if image_url:
         try:
@@ -164,5 +183,67 @@ def video_popup():
 @app.route('/serve_video')
 def serve_video():
     return send_file("E:\\THIHE\\testfitty one\\videotesst.mp4", mimetype='video/mp4')
+
+@app.route("/save_tags", methods=["POST"])
+def save_tags():
+    data = request.json
+    tag_name = data.get("tag", "").strip()
+    frames = data.get("frames", [])
+
+    if not tag_name:
+        return jsonify({"error": "Tag name is required"}), 400
+    if not frames:
+        return jsonify({"error": "No frames provided"}), 400
+
+    try:
+        # Tải tags hiện có
+        existing_tags = load_tags_from_file()
+
+        # Kiểm tra nếu tag đã tồn tại
+        for tag in existing_tags:
+            if tag["tag"] == tag_name:
+                tag["frames"] = frames  # Cập nhật frame của tag cũ
+                break
+        else:
+            # Thêm tag mới
+            existing_tags.append({"tag": tag_name, "frames": frames})
+
+        # Lưu lại vào file
+        save_tags_to_file(existing_tags)
+
+        # Trả về URL chứa tag vừa lưu
+        return jsonify({"message": "Tags saved successfully", "redirect_url": url_for('index', tag_name=tag_name)}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    
+@app.route('/load-images', methods=['GET'])
+def load_images():
+    tag_name = request.args.get('tag_name')
+    if tag_name:
+        tags = load_tags_from_file()
+        tag = next((t for t in tags if t['tag'] == tag_name), None)
+        if tag:
+            # Trả về danh sách tên ảnh theo tag
+            return jsonify({'images': tag['frames']})
+    return jsonify({'images': []})
+
+TAGS_FILE = "tags.json"
+# Lưu trữ tags toàn cục để sử dụng trong các route
+TAGS = load_tags_from_file()
+@app.route('/get-tags', methods=['GET'])
+def get_tags():
+    with open('tags.json', 'r') as file:
+        data = json.load(file)
+    return jsonify(data)
+
+def save_tags_to_file(tags):
+    with open(TAGS_FILE, "w") as f:
+        json.dump(tags, f)
+
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
