@@ -32,7 +32,6 @@ def extract_frames_from_video(video_path, output_dir, threshold=30.0):
                 print(f"da luu {frame_filename}")
 
         cap.release()
-
     video_manager.release()
     print("Trich xuat hoan tat.")
 
@@ -40,5 +39,4 @@ video_path = "E:\\THIHE\\testfitty one\\videotesst.mp4"
 output_dir = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"  
 output_defaut = "*\\SegmentVideo\\seg1\\SegmentVideo"
 
-# Gọi hàm trích xuất khung hình
 extract_frames_from_video(video_path, output_dir)

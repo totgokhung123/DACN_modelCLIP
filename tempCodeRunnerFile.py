@@ -1,1 +1,1 @@
-import numpy as np
+FRAMES_JSON = "output_samples.json" 

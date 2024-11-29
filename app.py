@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory, Response,send_file,url_for, jsonify
+from flask import Flask, request, render_template, send_from_directory, Response,send_file,url_for, jsonify,abort
 import os
 from io import BytesIO
 import numpy as np
@@ -16,21 +16,61 @@ from pathlib import Path
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
-FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
+# FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
+FRAMES_JSON = "output_samples.json" 
 EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
 
+def load_frames_from_json(json_path):
+    """Load danh sách tên file từ file JSON."""
+    with open(json_path, 'r', encoding='utf-8') as file:
+        samples = json.load(file)
+    # Trả về danh sách tên file (không bao gồm đường dẫn đầy đủ)
+    return [os.path.basename(sample["filepath"]) for sample in samples if "filepath" in sample]
+def load_frames_mapping_from_json(json_path):
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        # Trả về mapping {filename: full_filepath}
+        return {Path(sample["filepath"]).name: sample["filepath"] for sample in data}
+
+FRAMES_MAPPING = load_frames_mapping_from_json(FRAMES_JSON)
 app = Flask(__name__)
+
+# @app.route('/frames/<path:filename>')
+# def serve_frame(filename):
+#     a = send_from_directory(FRAMES_DIR, filename)
+#     print(a)
+#     return send_from_directory(FRAMES_DIR, filename)
+def load_frame_data():
+    with open('output_samples.json', 'r') as file:
+        return json.load(file)
+
+# Lưu dữ liệu frames vào một biến toàn cục
+frames_data = load_frame_data()
+
+@app.route('/get_frame_info/<frameidx>')
+def get_frame_info(frameidx):
+    # Tìm frame tương ứng theo frameidx
+    frame_info = next((frame for frame in frames_data if str(frame['frameidx']) == frameidx), None)
+
+    if frame_info:
+        return jsonify(frame_info)
+    else:
+        return jsonify({"error": "Frame not found"}), 404
 
 @app.route('/frames/<path:filename>')
 def serve_frame(filename):
-    return send_from_directory(FRAMES_DIR, filename)
+    if filename in FRAMES_MAPPING:
+        full_path = FRAMES_MAPPING[filename]
+        return send_file(full_path, mimetype="image/jpeg")  # hoặc mimetype khác nếu ảnh không phải JPEG
+    else:
+        abort(404, description=f"File {filename} not found.")
 
 @app.route('/reset')
 def reset():
-    all = sorted([f.name for f in Path(FRAMES_DIR).iterdir()], key=lambda x: int(Path(x).stem))
+    all = sorted(load_frames_from_json(FRAMES_JSON), key=lambda x: int(Path(x).stem))
     tags = load_tags_from_file()
     return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
 
@@ -40,7 +80,7 @@ def load_tags_from_file():
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    all = sorted([f.name for f in Path(FRAMES_DIR).iterdir()], key=lambda x: int(Path(x).stem))
+    all = sorted(load_frames_from_json(FRAMES_JSON), key=lambda x: int(Path(x).stem))
     tags = load_tags_from_file()
 
     if request.method == "POST":
@@ -52,12 +92,12 @@ def index():
         except ValueError:
             top_k = 50
 
-        total_frames = len([f for f in Path(FRAMES_DIR).iterdir()])
+        total_frames = len(all)    
         top_k = min(max(1, top_k), total_frames)
         processed_text = text_processor.preprocess_and_translate(query)
         print("Câu truy vấn đã xử lý:", processed_text)
         top_frames = search_top_frames(processed_text, top_k)
-        return render_template("index.html", query=query, top_frames=top_frames)
+        return render_template("index.html", query=query, top_frames=top_frames,tags=[t['tag'] for t in tags])
 
     # Xử lý khi có GET request (lấy `tag_name` từ URL)
     tag_name = request.args.get("tag_name")
@@ -73,12 +113,13 @@ def index():
     return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
 @app.route("/search_image", methods=["POST"])
 def search_image():
+    tags = load_tags_from_file()
     top_k = int(request.form.get("top_k", 50))
     try:
         top_k = int(float(top_k))  
     except ValueError:
         top_k = 50  
-    total_frames = len([f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
+    total_frames = len(load_frames_from_json(FRAMES_JSON))
     top_k = min(max(1, top_k), total_frames)  
     image_files = request.files.getlist("image_files") 
     image_url = request.form.get("image_url")
@@ -122,20 +163,10 @@ def search_image():
     else:
         top_frames = []
 
-    return render_template("index.html", query=None, top_frames=top_frames)
-#def search_top_frames(query, top_k):
-    
-    text_input = clip.tokenize([query]).to(device)
-    with torch.no_grad():
-        text_features = model.encode_text(text_input).cpu().numpy()
-    
-    similarities = np.dot(embeddings, text_features.T).flatten()
-    top_indices = np.argsort(similarities)[-top_k:][::-1]  
-
-    all_files = [f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
-    return [all_files[i] for i in top_indices]
+    return render_template("index.html", query=None, top_frames=top_frames,tags=[t['tag'] for t in tags])
 
 def search_top_frames(query, top_k):
+    
     
     text_input = clip.tokenize([query]).to(device)
     with torch.no_grad():
@@ -150,7 +181,7 @@ def search_top_frames(query, top_k):
 
     top_indices = np.argsort(similarities)[-top_k:][::-1] 
 
-    all_files = [f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
+    all_files = load_frames_from_json(FRAMES_JSON)
     return [all_files[i] for i in top_indices]
 
 def process_image_query(image_file, image_url):
@@ -173,7 +204,7 @@ def search_top_frames_by_image(image_features, top_k):
     similarities = np.dot(embeddings, image_features.T).flatten()
     top_indices = np.argsort(similarities)[-top_k:][::-1]
 
-    all_files = [f for f in os.listdir(FRAMES_DIR) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
+    all_files = load_frames_from_json(FRAMES_JSON)
     return [all_files[i] for i in top_indices]
 @app.route('/video_popup')
 def video_popup():
@@ -215,7 +246,6 @@ def save_tags():
         return jsonify({"message": "Tags saved successfully", "redirect_url": url_for('index', tag_name=tag_name)}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
     
 @app.route('/load-images', methods=['GET'])
 def load_images():
@@ -240,10 +270,6 @@ def get_tags():
 def save_tags_to_file(tags):
     with open(TAGS_FILE, "w") as f:
         json.dump(tags, f)
-
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)

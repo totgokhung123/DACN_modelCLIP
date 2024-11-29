@@ -54,6 +54,19 @@ Search Top Frames
         text-align: center;
     }
     /* Modal styles */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+    }
+    .modal.show, #overlay.show {
+        display: block;
+    }
     .modal {
         display: none;
         position: fixed;
@@ -70,6 +83,27 @@ Search Top Frames
     }
     .modal.show {
         display: block;
+    }
+    /* Style cho các thông tin chi tiết */
+    .info-field {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    /* Style cho ảnh */
+    #popup-image {
+        max-height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Style cho sidebar chứa thông tin */
+    #frame-info {
+        overflow-y: auto;
+        max-height: 100%;
+        height: 100%;
     }
     .blur-background {
         filter: blur(5px);
@@ -208,50 +242,80 @@ Search Top Frames
             {% for frame in top_frames %}
             <div class="frame-container">
                 <input type="checkbox" class="frame-checkbox outline-Danger form-checkbox" style="color: rgba(255, 69, 0, 0.7)" data-frame="{{ frame }}" >
-                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}">                   
-                   <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}">
+                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}" onclick="openImageModal('{{ url_for('serve_frame',filename=frame)}}','{{frame.split('.')[0]}}')">                   
+                    <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}" >
                 </a>
             </div>
             {% endfor %}
         </div>
     {% endif %}
 </div>
+
 <div class="overlay" id="overlay"></div>
-<div class="modal" id="video-modal">
-    <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
-    <video id="video-player" width="100%" controls>
-        <source src="" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ video.
-    </video>
-    <button onclick="closeModal()">Đóng</button>
+<div class="modal" id="image-modal">
+    <div style="display: flex; width: 100%; height: 100%">
+        <!-- Bên trái: Hiển thị ảnh -->
+        <div style="flex: 1; overflow: hidden;">
+            <img id="popup-image" src="" alt="Popup Image" style="max-width: 100%; max-height: auto; object-fit: contain;">
+        </div>
+
+        <!-- Bên phải: Thông tin chi tiết -->
+        <div style="flex: 1; padding-left: 20px; overflow-y: auto; max-height: 100%;">
+            <div id="frame-info">
+                <!-- Thông tin sẽ được chèn vào đây -->
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="closeImageModal()">Đóng</button>
+    </div>
 </div>
+
+
 <script>
-    document.querySelectorAll('.frame-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            
-            const frameIdx = this.getAttribute('data-frameidx');
-            document.getElementById('frameidx-display').innerText = frameIdx;
-            
-            const videoPlayer = document.getElementById('video-player');
-            videoPlayer.querySelector('source').src = "/serve_video";
-            videoPlayer.load();
-            videoPlayer.currentTime = frameIdx / 25;
-            document.getElementById('video-modal').classList.add('show');
-            document.getElementById('overlay').classList.add('show');
-            document.querySelector('.center-content').classList.add('blur-background');
-        });
-    });
-    function closeModal() {
-        document.getElementById('video-modal').classList.remove('show');
-        document.getElementById('overlay').classList.remove('show');
-        document.querySelector('.center-content').classList.remove('blur-background');
-        const videoPlayer = document.getElementById('video-player');
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
+    function openImageModal(src, frameIdx) {
+        document.getElementById('popup-image').src = src;
+
+        // Lấy thông tin từ JSON theo frameIdx
+        fetch(`/get_frame_info/${frameIdx}`)
+            .then(response => response.json())
+            .then(data => {
+                let frameInfo = document.getElementById('frame-info');
+                frameInfo.innerHTML = `
+                    <div class="info-field">
+                        <strong>Frame Index:</strong> ${data.frameidx}
+                    </div>
+                    <div class="info-field">
+                        <strong>Video Segment:</strong> ${data.video}
+                    </div>
+                    <div class="info-field">
+                        <strong>Image Size:</strong> ${data.metadata.width}x${data.metadata.height}
+                    </div>
+
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching frame info:', error);
+            });
+
+        document.getElementById('overlay').classList.add('show');
+        document.getElementById('image-modal').classList.add('show');
     }
 
+    function closeImageModal() {
+        document.getElementById('overlay').classList.remove('show');
+        document.getElementById('image-modal').classList.remove('show');
+    }
 </script>
+
+
+
+
+
+
+
+
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const checkboxes = document.querySelectorAll(".frame-checkbox");

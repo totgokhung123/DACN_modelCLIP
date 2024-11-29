@@ -1,0 +1,6092 @@
+[
+    {
+        "id": "10343",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\10343.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 291871,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "10343",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 10343
+    },
+    {
+        "id": "10467",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\10467.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 267158,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "10467",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 10467
+    },
+    {
+        "id": "10591",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\10591.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 322808,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "10591",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 10591
+    },
+    {
+        "id": "10729",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\10729.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 258536,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "10729",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 10729
+    },
+    {
+        "id": "10929",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\10929.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 210737,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "10929",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 10929
+    },
+    {
+        "id": "11087",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11087.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 215494,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11087",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11087
+    },
+    {
+        "id": "11138",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11138.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 212555,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11138",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11138
+    },
+    {
+        "id": "11181",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11181.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 169957,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11181",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11181
+    },
+    {
+        "id": "11233",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11233.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 208483,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11233",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11233
+    },
+    {
+        "id": "11285",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11285.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 142175,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11285",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11285
+    },
+    {
+        "id": "11334",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11334.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 186571,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11334",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11334
+    },
+    {
+        "id": "11390",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11390.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 155074,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11390",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11390
+    },
+    {
+        "id": "11452",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11452.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 216418,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11452",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11452
+    },
+    {
+        "id": "11519",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11519.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 154825,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11519",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11519
+    },
+    {
+        "id": "11585",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11585.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 176985,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11585",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11585
+    },
+    {
+        "id": "11649",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11649.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 196015,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11649",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11649
+    },
+    {
+        "id": "11710",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11710.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 208630,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11710",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11710
+    },
+    {
+        "id": "11769",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11769.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 155976,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11769",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11769
+    },
+    {
+        "id": "11828",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11828.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 168794,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11828",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11828
+    },
+    {
+        "id": "11880",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11880.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 170082,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11880",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11880
+    },
+    {
+        "id": "11954",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\11954.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 235428,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "11954",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 11954
+    },
+    {
+        "id": "12136",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12136.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 195191,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12136",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12136
+    },
+    {
+        "id": "12327",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12327.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 240044,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12327",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12327
+    },
+    {
+        "id": "12453",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12453.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 180565,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12453",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12453
+    },
+    {
+        "id": "12532",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12532.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 157601,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12532",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12532
+    },
+    {
+        "id": "12599",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12599.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 180081,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12599",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12599
+    },
+    {
+        "id": "12677",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12677.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 168532,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12677",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12677
+    },
+    {
+        "id": "12735",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12735.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 182417,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12735",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12735
+    },
+    {
+        "id": "12803",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12803.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 186445,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12803",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12803
+    },
+    {
+        "id": "12871",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12871.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 268750,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12871",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12871
+    },
+    {
+        "id": "12937",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\12937.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 221580,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "12937",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 12937
+    },
+    {
+        "id": "1303",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\1303.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 235041,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "1303",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 1303
+    },
+    {
+        "id": "13082",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13082.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 208724,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13082",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13082
+    },
+    {
+        "id": "13220",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13220.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 274736,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13220",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13220
+    },
+    {
+        "id": "13278",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13278.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 267571,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13278",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13278
+    },
+    {
+        "id": "13339",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13339.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 256607,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13339",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13339
+    },
+    {
+        "id": "13392",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13392.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 240002,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13392",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13392
+    },
+    {
+        "id": "13452",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13452.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 230454,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13452",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13452
+    },
+    {
+        "id": "13522",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13522.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 165190,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13522",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13522
+    },
+    {
+        "id": "13583",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13583.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 268001,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13583",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13583
+    },
+    {
+        "id": "13636",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13636.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 242871,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13636",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13636
+    },
+    {
+        "id": "13697",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13697.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 207106,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13697",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13697
+    },
+    {
+        "id": "13758",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13758.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 234667,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13758",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13758
+    },
+    {
+        "id": "13808",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13808.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 314058,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13808",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13808
+    },
+    {
+        "id": "13862",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13862.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 234068,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13862",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13862
+    },
+    {
+        "id": "13920",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13920.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 205910,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13920",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13920
+    },
+    {
+        "id": "13980",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\13980.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 212685,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "13980",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 13980
+    },
+    {
+        "id": "14043",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14043.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 191565,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14043",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14043
+    },
+    {
+        "id": "14088",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14088.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 70046,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14088",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14088
+    },
+    {
+        "id": "14115",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14115.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 140731,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14115",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14115
+    },
+    {
+        "id": "14154",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14154.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 192200,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14154",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14154
+    },
+    {
+        "id": "14202",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14202.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 164983,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14202",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14202
+    },
+    {
+        "id": "14234",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14234.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 190834,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14234",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14234
+    },
+    {
+        "id": "14259",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14259.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 155314,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14259",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14259
+    },
+    {
+        "id": "14290",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14290.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 181350,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14290",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14290
+    },
+    {
+        "id": "14343",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14343.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 146879,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14343",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14343
+    },
+    {
+        "id": "14418",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14418.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 127603,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14418",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14418
+    },
+    {
+        "id": "14481",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14481.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 155640,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14481",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14481
+    },
+    {
+        "id": "14522",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14522.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 74429,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14522",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14522
+    },
+    {
+        "id": "14554",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14554.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 129897,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14554",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14554
+    },
+    {
+        "id": "14771",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\14771.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 236145,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "14771",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 14771
+    },
+    {
+        "id": "15044",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15044.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 198404,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15044",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15044
+    },
+    {
+        "id": "15137",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15137.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 231793,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15137",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15137
+    },
+    {
+        "id": "15205",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15205.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 297847,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15205",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15205
+    },
+    {
+        "id": "15263",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15263.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 223788,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15263",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15263
+    },
+    {
+        "id": "15315",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15315.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 211143,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15315",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15315
+    },
+    {
+        "id": "15382",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15382.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 262572,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15382",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15382
+    },
+    {
+        "id": "15450",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15450.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 246919,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15450",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15450
+    },
+    {
+        "id": "15511",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15511.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 177433,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15511",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15511
+    },
+    {
+        "id": "15556",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15556.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 224658,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15556",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15556
+    },
+    {
+        "id": "15613",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15613.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 225821,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15613",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15613
+    },
+    {
+        "id": "15719",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\15719.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 147496,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "15719",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 15719
+    },
+    {
+        "id": "16253",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\16253.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 236589,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "16253",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 16253
+    },
+    {
+        "id": "16855",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\16855.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 153902,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "16855",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 16855
+    },
+    {
+        "id": "17050",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17050.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 146291,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17050",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17050
+    },
+    {
+        "id": "17132",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17132.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 121601,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17132",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17132
+    },
+    {
+        "id": "17174",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17174.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 126027,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17174",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17174
+    },
+    {
+        "id": "17392",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17392.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 195085,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17392",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17392
+    },
+    {
+        "id": "17641",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17641.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 329926,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17641",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17641
+    },
+    {
+        "id": "17749",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17749.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 188013,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17749",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17749
+    },
+    {
+        "id": "1789",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\1789.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 85379,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "1789",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 1789
+    },
+    {
+        "id": "17907",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\17907.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 101914,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "17907",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 17907
+    },
+    {
+        "id": "18040",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\18040.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 110587,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "18040",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 18040
+    },
+    {
+        "id": "18252",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\18252.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 212254,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "18252",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 18252
+    },
+    {
+        "id": "18534",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\18534.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 229596,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "18534",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 18534
+    },
+    {
+        "id": "18674",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\18674.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 261427,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "18674",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 18674
+    },
+    {
+        "id": "18817",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\18817.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 214768,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "18817",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 18817
+    },
+    {
+        "id": "18961",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\18961.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 266828,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "18961",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 18961
+    },
+    {
+        "id": "19065",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19065.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 207287,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19065",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19065
+    },
+    {
+        "id": "19182",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19182.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 174003,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19182",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19182
+    },
+    {
+        "id": "19280",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19280.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 171408,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19280",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19280
+    },
+    {
+        "id": "19344",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19344.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 188814,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19344",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19344
+    },
+    {
+        "id": "19413",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19413.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 295354,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19413",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19413
+    },
+    {
+        "id": "19516",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19516.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 276876,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19516",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19516
+    },
+    {
+        "id": "19574",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19574.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 296268,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19574",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19574
+    },
+    {
+        "id": "19609",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19609.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 331919,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19609",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19609
+    },
+    {
+        "id": "19656",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19656.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 308179,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19656",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19656
+    },
+    {
+        "id": "19895",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\19895.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 237546,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "19895",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 19895
+    },
+    {
+        "id": "20160",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20160.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 237599,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20160",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20160
+    },
+    {
+        "id": "20233",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20233.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 231597,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20233",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20233
+    },
+    {
+        "id": "20282",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20282.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 287963,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20282",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20282
+    },
+    {
+        "id": "20326",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20326.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 161350,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20326",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20326
+    },
+    {
+        "id": "20401",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20401.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 241654,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20401",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20401
+    },
+    {
+        "id": "20479",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20479.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 180135,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20479",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20479
+    },
+    {
+        "id": "20523",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20523.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 233611,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20523",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20523
+    },
+    {
+        "id": "20566",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20566.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 158961,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20566",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20566
+    },
+    {
+        "id": "20598",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20598.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 221093,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20598",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20598
+    },
+    {
+        "id": "206",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\206.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 238310,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "206",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 206
+    },
+    {
+        "id": "20630",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20630.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 200185,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20630",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20630
+    },
+    {
+        "id": "20674",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20674.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 260513,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20674",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20674
+    },
+    {
+        "id": "20720",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20720.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 224323,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20720",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20720
+    },
+    {
+        "id": "20786",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20786.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 260710,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20786",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20786
+    },
+    {
+        "id": "20853",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20853.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 225810,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20853",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20853
+    },
+    {
+        "id": "20909",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20909.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 210243,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20909",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20909
+    },
+    {
+        "id": "20960",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20960.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 162551,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20960",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20960
+    },
+    {
+        "id": "20993",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\20993.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 178827,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "20993",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 20993
+    },
+    {
+        "id": "21029",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21029.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 182008,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21029",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21029
+    },
+    {
+        "id": "21091",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21091.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 214103,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21091",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21091
+    },
+    {
+        "id": "21172",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21172.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 198532,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21172",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21172
+    },
+    {
+        "id": "21282",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21282.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 233609,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21282",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21282
+    },
+    {
+        "id": "21407",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21407.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 231526,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21407",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21407
+    },
+    {
+        "id": "21652",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21652.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 180079,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21652",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21652
+    },
+    {
+        "id": "21892",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21892.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 190873,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21892",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21892
+    },
+    {
+        "id": "21979",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\21979.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 158853,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "21979",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 21979
+    },
+    {
+        "id": "22087",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22087.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 179008,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22087",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22087
+    },
+    {
+        "id": "22185",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22185.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 136777,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22185",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22185
+    },
+    {
+        "id": "22256",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22256.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 153082,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22256",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22256
+    },
+    {
+        "id": "22355",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22355.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 197651,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22355",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22355
+    },
+    {
+        "id": "22467",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22467.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 150824,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22467",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22467
+    },
+    {
+        "id": "22544",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22544.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 168032,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22544",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22544
+    },
+    {
+        "id": "22594",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22594.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 94776,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22594",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22594
+    },
+    {
+        "id": "22659",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22659.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 157950,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22659",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22659
+    },
+    {
+        "id": "22746",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22746.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 194310,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22746",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22746
+    },
+    {
+        "id": "22869",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22869.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 151424,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22869",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22869
+    },
+    {
+        "id": "22966",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\22966.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 143690,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "22966",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 22966
+    },
+    {
+        "id": "2299",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\2299.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 117162,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "2299",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 2299
+    },
+    {
+        "id": "23005",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23005.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 169466,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23005",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23005
+    },
+    {
+        "id": "23040",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23040.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 178715,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23040",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23040
+    },
+    {
+        "id": "23086",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23086.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 188663,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23086",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23086
+    },
+    {
+        "id": "23147",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23147.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 172962,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23147",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23147
+    },
+    {
+        "id": "23229",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23229.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 191216,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23229",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23229
+    },
+    {
+        "id": "23312",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23312.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 162099,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23312",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23312
+    },
+    {
+        "id": "23536",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23536.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 163013,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23536",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23536
+    },
+    {
+        "id": "23824",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23824.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 142748,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23824",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23824
+    },
+    {
+        "id": "23944",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\23944.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 132671,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "23944",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 23944
+    },
+    {
+        "id": "24006",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24006.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 145069,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24006",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24006
+    },
+    {
+        "id": "24100",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24100.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 154722,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24100",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24100
+    },
+    {
+        "id": "24171",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24171.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 190711,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24171",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24171
+    },
+    {
+        "id": "24226",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24226.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 139293,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24226",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24226
+    },
+    {
+        "id": "24287",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24287.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 139395,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24287",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24287
+    },
+    {
+        "id": "24336",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24336.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 130522,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24336",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24336
+    },
+    {
+        "id": "24378",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24378.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 112684,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24378",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24378
+    },
+    {
+        "id": "24426",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24426.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 135846,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24426",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24426
+    },
+    {
+        "id": "24496",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24496.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 104958,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24496",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24496
+    },
+    {
+        "id": "24575",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24575.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 107865,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24575",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24575
+    },
+    {
+        "id": "24729",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24729.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 83454,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24729",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24729
+    },
+    {
+        "id": "24882",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24882.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 97008,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24882",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24882
+    },
+    {
+        "id": "24949",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\24949.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 127580,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "24949",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 24949
+    },
+    {
+        "id": "25235",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25235.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 239134,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25235",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25235
+    },
+    {
+        "id": "25525",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25525.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 145671,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25525",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25525
+    },
+    {
+        "id": "25578",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25578.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 200562,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25578",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25578
+    },
+    {
+        "id": "25659",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25659.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 118514,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25659",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25659
+    },
+    {
+        "id": "25746",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25746.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 166750,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25746",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25746
+    },
+    {
+        "id": "25798",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25798.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 196389,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25798",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25798
+    },
+    {
+        "id": "25853",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25853.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 137568,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25853",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25853
+    },
+    {
+        "id": "25920",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25920.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 147014,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25920",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25920
+    },
+    {
+        "id": "25995",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\25995.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 213171,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "25995",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 25995
+    },
+    {
+        "id": "26055",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26055.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 270814,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26055",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26055
+    },
+    {
+        "id": "26101",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26101.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 191572,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26101",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26101
+    },
+    {
+        "id": "26141",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26141.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 250951,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26141",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26141
+    },
+    {
+        "id": "26201",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26201.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 157455,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26201",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26201
+    },
+    {
+        "id": "26269",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26269.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 198876,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26269",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26269
+    },
+    {
+        "id": "26314",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26314.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 220743,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26314",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26314
+    },
+    {
+        "id": "26367",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26367.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 122666,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26367",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26367
+    },
+    {
+        "id": "26431",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26431.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 140329,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26431",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26431
+    },
+    {
+        "id": "26654",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26654.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 184841,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26654",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26654
+    },
+    {
+        "id": "26909",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\26909.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 187135,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "26909",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 26909
+    },
+    {
+        "id": "27020",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\27020.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 144330,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "27020",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 27020
+    },
+    {
+        "id": "27449",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\27449.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 143087,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "27449",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 27449
+    },
+    {
+        "id": "2786",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\2786.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 204231,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "2786",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 2786
+    },
+    {
+        "id": "27918",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\27918.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 164298,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "27918",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 27918
+    },
+    {
+        "id": "28280",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\28280.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 218635,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "28280",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 28280
+    },
+    {
+        "id": "2856",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\2856.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 123700,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "2856",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 2856
+    },
+    {
+        "id": "28587",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\28587.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 76959,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "28587",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 28587
+    },
+    {
+        "id": "28646",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\28646.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 66148,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "28646",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 28646
+    },
+    {
+        "id": "28702",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\28702.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 75577,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "28702",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 28702
+    },
+    {
+        "id": "28785",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\28785.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 96747,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "28785",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 28785
+    },
+    {
+        "id": "28965",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\28965.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 176150,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "28965",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 28965
+    },
+    {
+        "id": "2899",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\2899.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 108061,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "2899",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 2899
+    },
+    {
+        "id": "29170",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\29170.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 121701,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "29170",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 29170
+    },
+    {
+        "id": "29299",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\29299.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 172851,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "29299",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 29299
+    },
+    {
+        "id": "29581",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\29581.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 177646,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "29581",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 29581
+    },
+    {
+        "id": "2965",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\2965.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 282659,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "2965",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 2965
+    },
+    {
+        "id": "29843",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\29843.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 141605,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "29843",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 29843
+    },
+    {
+        "id": "30000",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30000.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 169018,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30000",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30000
+    },
+    {
+        "id": "30145",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30145.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 129478,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30145",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30145
+    },
+    {
+        "id": "30192",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30192.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 168167,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30192",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30192
+    },
+    {
+        "id": "30244",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30244.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 206664,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30244",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30244
+    },
+    {
+        "id": "30290",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30290.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 203665,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30290",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30290
+    },
+    {
+        "id": "30327",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30327.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 193740,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30327",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30327
+    },
+    {
+        "id": "3034",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\3034.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 162347,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "3034",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 3034
+    },
+    {
+        "id": "30395",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30395.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 174997,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30395",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30395
+    },
+    {
+        "id": "30466",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30466.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 165409,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30466",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30466
+    },
+    {
+        "id": "30515",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30515.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 119888,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30515",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30515
+    },
+    {
+        "id": "30650",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30650.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 136863,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30650",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30650
+    },
+    {
+        "id": "30771",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30771.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 97181,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30771",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30771
+    },
+    {
+        "id": "30832",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30832.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 76254,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30832",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30832
+    },
+    {
+        "id": "30900",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30900.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 74887,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30900",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30900
+    },
+    {
+        "id": "3091",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\3091.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 208394,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "3091",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 3091
+    },
+    {
+        "id": "30973",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\30973.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 59576,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "30973",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 30973
+    },
+    {
+        "id": "31112",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\31112.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 58927,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "31112",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 31112
+    },
+    {
+        "id": "31385",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\31385.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 236620,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "31385",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 31385
+    },
+    {
+        "id": "31618",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\31618.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 86198,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "31618",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 31618
+    },
+    {
+        "id": "3538",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\3538.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 246870,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "3538",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 3538
+    },
+    {
+        "id": "3982",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\3982.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 270991,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "3982",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 3982
+    },
+    {
+        "id": "4034",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\4034.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 347975,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "4034",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 4034
+    },
+    {
+        "id": "4092",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\4092.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 359537,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "4092",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 4092
+    },
+    {
+        "id": "4166",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\4166.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 295516,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "4166",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 4166
+    },
+    {
+        "id": "4223",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\4223.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 256598,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "4223",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 4223
+    },
+    {
+        "id": "429",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\429.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 72272,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "429",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 429
+    },
+    {
+        "id": "4458",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\4458.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 284506,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "4458",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 4458
+    },
+    {
+        "id": "456",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\456.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 136706,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "456",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 456
+    },
+    {
+        "id": "4932",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\4932.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 241429,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "4932",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 4932
+    },
+    {
+        "id": "5245",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\5245.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 227470,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "5245",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 5245
+    },
+    {
+        "id": "532",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\532.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 144076,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "532",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 532
+    },
+    {
+        "id": "5370",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\5370.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 246609,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "5370",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 5370
+    },
+    {
+        "id": "5495",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\5495.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 200844,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "5495",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 5495
+    },
+    {
+        "id": "5597",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\5597.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 223176,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "5597",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 5597
+    },
+    {
+        "id": "5657",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\5657.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 273731,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "5657",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 5657
+    },
+    {
+        "id": "5713",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\5713.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 225089,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "5713",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 5713
+    },
+    {
+        "id": "6089",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6089.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 192688,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6089",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6089
+    },
+    {
+        "id": "621",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\621.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 181960,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "621",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 621
+    },
+    {
+        "id": "6447",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6447.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 266489,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6447",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6447
+    },
+    {
+        "id": "6492",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6492.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 282971,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6492",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6492
+    },
+    {
+        "id": "6532",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6532.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 176769,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6532",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6532
+    },
+    {
+        "id": "6600",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6600.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 253571,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6600",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6600
+    },
+    {
+        "id": "664",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\664.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 236689,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "664",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 664
+    },
+    {
+        "id": "6671",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6671.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 247385,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6671",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6671
+    },
+    {
+        "id": "6700",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6700.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 146978,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6700",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6700
+    },
+    {
+        "id": "6746",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6746.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 178144,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6746",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6746
+    },
+    {
+        "id": "6811",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6811.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 178587,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6811",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6811
+    },
+    {
+        "id": "6855",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6855.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 209968,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6855",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6855
+    },
+    {
+        "id": "6883",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6883.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 228975,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6883",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6883
+    },
+    {
+        "id": "6949",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\6949.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 232886,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "6949",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 6949
+    },
+    {
+        "id": "700",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\700.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 237885,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "700",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 700
+    },
+    {
+        "id": "7037",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7037.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 223610,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7037",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7037
+    },
+    {
+        "id": "7100",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7100.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 230907,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7100",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7100
+    },
+    {
+        "id": "7139",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7139.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 241936,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7139",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7139
+    },
+    {
+        "id": "7188",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7188.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 163021,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7188",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7188
+    },
+    {
+        "id": "7241",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7241.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 316169,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7241",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7241
+    },
+    {
+        "id": "7311",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7311.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 253851,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7311",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7311
+    },
+    {
+        "id": "7487",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7487.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 185173,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7487",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7487
+    },
+    {
+        "id": "751",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\751.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 181242,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "751",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 751
+    },
+    {
+        "id": "7624",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7624.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 224634,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7624",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7624
+    },
+    {
+        "id": "7659",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7659.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 216818,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7659",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7659
+    },
+    {
+        "id": "7692",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7692.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 290088,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7692",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7692
+    },
+    {
+        "id": "7742",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7742.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 294099,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7742",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7742
+    },
+    {
+        "id": "7839",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7839.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 166951,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7839",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7839
+    },
+    {
+        "id": "7932",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7932.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 140732,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7932",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7932
+    },
+    {
+        "id": "7979",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\7979.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 159625,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "7979",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 7979
+    },
+    {
+        "id": "801",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\801.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 222514,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "801",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 801
+    },
+    {
+        "id": "8136",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8136.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 188502,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8136",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8136
+    },
+    {
+        "id": "829",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\829.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 279075,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "829",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 829
+    },
+    {
+        "id": "8303",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8303.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 164174,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8303",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8303
+    },
+    {
+        "id": "8356",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8356.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 110583,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8356",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8356
+    },
+    {
+        "id": "8420",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8420.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 156684,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8420",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8420
+    },
+    {
+        "id": "8474",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8474.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 112591,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8474",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8474
+    },
+    {
+        "id": "8519",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8519.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 197982,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8519",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8519
+    },
+    {
+        "id": "852",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\852.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 107290,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "852",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 852
+    },
+    {
+        "id": "8586",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8586.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 131815,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8586",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8586
+    },
+    {
+        "id": "8640",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8640.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 142302,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8640",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8640
+    },
+    {
+        "id": "8711",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8711.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 191055,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8711",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8711
+    },
+    {
+        "id": "878",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\878.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 129264,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "878",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 878
+    },
+    {
+        "id": "8798",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8798.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 121066,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8798",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8798
+    },
+    {
+        "id": "8856",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8856.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 149766,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8856",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8856
+    },
+    {
+        "id": "8978",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\8978.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 230552,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "8978",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 8978
+    },
+    {
+        "id": "9123",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9123.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 266389,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9123",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9123
+    },
+    {
+        "id": "9192",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9192.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 71739,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9192",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9192
+    },
+    {
+        "id": "9219",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9219.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 140328,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9219",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9219
+    },
+    {
+        "id": "9265",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9265.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 279780,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9265",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9265
+    },
+    {
+        "id": "9326",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9326.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 278152,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9326",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9326
+    },
+    {
+        "id": "9382",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9382.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 260805,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9382",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9382
+    },
+    {
+        "id": "9439",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9439.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 247325,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9439",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9439
+    },
+    {
+        "id": "9483",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9483.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 221915,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9483",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9483
+    },
+    {
+        "id": "9525",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9525.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 225401,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9525",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9525
+    },
+    {
+        "id": "9568",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9568.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 294272,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9568",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9568
+    },
+    {
+        "id": "9600",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9600.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 229338,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9600",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9600
+    },
+    {
+        "id": "9629",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9629.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 78762,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9629",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9629
+    },
+    {
+        "id": "9657",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9657.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 130832,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9657",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9657
+    },
+    {
+        "id": "9976",
+        "media_type": "image",
+        "filepath": "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\9976.jpg",
+        "tags": [
+            "MainData"
+        ],
+        "metadata": {
+            "size_bytes": 193823,
+            "mime_type": "image/jpeg",
+            "width": 1280,
+            "height": 720,
+            "num_channels": 3
+        },
+        "video": "SegmentVideo",
+        "frameid": "9976",
+        "detections": {
+            "detections": []
+        },
+        "frameidx": 9976
+    }
+]
