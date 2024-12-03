@@ -17,7 +17,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
 # FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
-FRAMES_JSON = "output_samples.json" 
+FRAMES_JSON = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\output_samples.json" 
 EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
@@ -44,7 +44,7 @@ app = Flask(__name__)
 #     print(a)
 #     return send_from_directory(FRAMES_DIR, filename)
 def load_frame_data():
-    with open('output_samples.json', 'r') as file:
+    with open('DACN_modelCLIP/output_samples.json', 'r') as file:
         return json.load(file)
 
 # Lưu dữ liệu frames vào một biến toàn cục
@@ -64,7 +64,7 @@ def get_frame_info(frameidx):
 def serve_frame(filename):
     if filename in FRAMES_MAPPING:
         full_path = FRAMES_MAPPING[filename]
-        return send_file(full_path, mimetype="image/jpeg")  # hoặc mimetype khác nếu ảnh không phải JPEG
+        return send_file(full_path, mimetype="image/jpeg")  
     else:
         abort(404, description=f"File {filename} not found.")
 
@@ -75,7 +75,7 @@ def reset():
     return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
 
 def load_tags_from_file():
-    with open('tags.json', 'r') as file:
+    with open('DACN_modelCLIP/tags.json', 'r') as file:
         return json.load(file)
 
 @app.route("/", methods=["GET", "POST"])
@@ -98,7 +98,7 @@ def index():
         print("Câu truy vấn đã xử lý:", processed_text)
         top_frames = search_top_frames(processed_text, top_k)
         return render_template("index.html", query=query, top_frames=top_frames,tags=[t['tag'] for t in tags])
-
+    
     # Xử lý khi có GET request (lấy `tag_name` từ URL)
     tag_name = request.args.get("tag_name")
     if tag_name:
@@ -233,7 +233,7 @@ def save_tags():
         # Kiểm tra nếu tag đã tồn tại
         for tag in existing_tags:
             if tag["tag"] == tag_name:
-                tag["frames"] = frames  # Cập nhật frame của tag cũ
+                tag["frames"] = frames  
                 break
         else:
             # Thêm tag mới
@@ -258,12 +258,12 @@ def load_images():
             return jsonify({'images': tag['frames']})
     return jsonify({'images': []})
 
-TAGS_FILE = "tags.json"
+TAGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\tags.json"
 # Lưu trữ tags toàn cục để sử dụng trong các route
 TAGS = load_tags_from_file()
 @app.route('/get-tags', methods=['GET'])
 def get_tags():
-    with open('tags.json', 'r') as file:
+    with open('DACN_modelCLIP/tags.json', 'r') as file:
         data = json.load(file)
     return jsonify(data)
 

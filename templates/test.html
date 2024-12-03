@@ -182,7 +182,7 @@
 
 
 
-<div class="modal " id="video-modal">
+<!-- <div class="modal " id="video-modal">
     <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
     <video id="video-player" width="100%" controls>
         <source src="" type="video/mp4">
@@ -192,7 +192,7 @@
     <div>
         <button onclick="closeModal()">Đóng</button>
     </div> 
-</div>
+</div> -->
 <script>
     document.querySelectorAll('.frame-link').forEach(link => {
         link.addEventListener('click', function(event) {
@@ -237,27 +237,27 @@
 
 
 
-
+<!--  
 <div class="overlay " id="overlay"></div>
 <div class="modal" id="image-modal">
     <div style="display: flex; width: 100%;">
-        <!-- Bên trái: Hiển thị ảnh và thanh công cụ -->
+
         <div style="flex: 1; position: relative;">
             <div style="position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between;">
-                <button class="tool-button">🔍</button> <!-- Phóng to -->
-                <button class="tool-button">⏻</button> <!-- Tùy chọn thêm -->
+                <button class="tool-button">🔍</button> 
+                <button class="tool-button">⏻</button> 
             </div>
             <img id="popup-image" src="" alt="Popup Image" style="width: 100%; height: auto;">
             <div style="position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-between;">
-                <button class="tool-button">💾</button> <!-- Lưu -->
-                <button class="tool-button">✏️</button> <!-- Chỉnh sửa -->
+                <button class="tool-button">💾</button> 
+                <button class="tool-button">✏️</button> 
             </div>
         </div>
 
-        <!-- Bên phải: Thông tin chi tiết -->
+
         <div style="flex: 1; overflow-y: auto; padding: 10px; border-left: 1px solid #ddd;">
             <div id="image-details">
-                <!-- Thông tin sẽ được chèn vào đây -->
+                
             </div>
         </div>
     </div>
@@ -265,7 +265,7 @@
         <button onclick="closeImageModal()">Đóng</button>
     </div>
 </div>
-
+-->
 <script>
     // Lấy thông tin chi tiết từ file JSON
     let imageDetails = {};
