@@ -5,14 +5,12 @@ Search Top Frames
 
 {% block content %}
 <style>
-    
-        /* Container bao quanh hình ảnh và checkbox */
+
     .frame-container {
         position: relative;
         display: inline-block;
     }
 
-    /* Checkbox hiển thị ở góc trên bên trái */
     .frame-checkbox {
         position: absolute;
         top: 5px;
@@ -20,11 +18,10 @@ Search Top Frames
         z-index: 10;
         width: 20px;
         height: 20px;
-        display: none; /* Ẩn checkbox theo mặc định */
+        display: none; 
         cursor: pointer;
     }
 
-    /* Hiển thị checkbox khi di chuột vào container */
     .frame-container:hover .frame-checkbox {
         display: block; /* Hiển thị checkbox */
         border-color: rgba(255, 69, 0, 0.7);
@@ -34,17 +31,24 @@ Search Top Frames
         display: block;
     }
 
-    /* Bổ sung kiểu dáng cho frame-gallery */
-    .frame-gallery img {
-        width: 150px;
-        height: auto;
-        cursor: pointer;
-        border-radius: 5px; /* Tuỳ chọn: làm bo tròn góc hình ảnh */
-        transition: transform 0.3s;
+    .frame-gallery {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+        /* Cột sẽ tự động lấp đầy container và mỗi ảnh có chiều rộng tối thiểu là 200px */
+        justify-items: center; 
     }
-
+    
+    .frame-gallery img {
+        width: 100%; /* Ảnh sẽ chiếm toàn bộ chiều rộng của ô grid */
+        height: auto; 
+        cursor: pointer;
+        border-radius: 5px; 
+        transition: transform 0.3s ease-in-out;
+    }
+    
     .frame-gallery img:hover {
-        transform: scale(1.05); /* Tuỳ chọn: phóng to nhẹ khi di chuột */
+        transform: scale(1.05); 
     }
     .center-content {
         display: flex;
@@ -153,6 +157,7 @@ Search Top Frames
         justify-content: center;
         align-items: center;
         position: relative;
+        
     }
     .image-container {
         position: relative;
@@ -197,6 +202,7 @@ Search Top Frames
         right: 10px;
         display: flex;
         gap: 10px;
+        z-index: 16;
     }
     
     .toolbar i, .bottom-toolbar i {
@@ -219,47 +225,62 @@ Search Top Frames
         display: flex;
         gap: 10px;
     }
-    .bounding-boxes {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
+    /* Đảm bảo bounding boxes và toolbar hiển thị phía trước ảnh */
+.bounding-boxes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Cao hơn ảnh */
+    pointer-events: none; /* Để không cản trở các sự kiện click lên ảnh */
+}
+
+.bounding-box {
+    position: absolute;
+    border: 2px solid rgba(255, 0, 0, 0.7);
+    z-index: 11; /* Bên trên container bounding-boxes */
+    pointer-events: none;
+}
+
+.bounding-box span {
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 12; 
+    pointer-events: none;
+}
     
-    .bounding-box {
-        position: absolute;
-        border: 2px solid rgba(255, 0, 0, 0.7);
-        color: white;
-        font-size: 12px;
-        background-color: rgba(255, 0, 0, 0.5);
-        padding: 2px;
-        pointer-events: none;
-    }
 </style>
 <div class="border border-black/10 dark:border-white/10 p-5 rounded-md" style="padding: 10px">
     <div x-data="{activepillstabs:'profile'}">
         <ul class="flex flex-wrap text-sm font-medium text-center text-black/50">
-            <li class="mr-2">
-                <a href="javascript:;"
+            <li class="mr-2" >
+                <a href="javascript:;" style="padding: 10px"
                 @click="activepillstabs = activepillstabs === 'profile' ? '' : 'profile'"
                 :class="activepillstabs === 'profile' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'"
-                class="inline-block rounded-lg px-4 py-3">
+                class="inline-block rounded-lg px-4 py-3 flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
                     </svg>
-                    Query with text
+                    Query by text
                 </a>
             </li>
-            <li class="mr-2">
-                <a href="javaScript:;" 
+            <li class="mr-2" >
+                <a href="javaScript:;" style="padding: 10px"
                 @click="activepillstabs = activepillstabs === 'dashboard' ? '' : 'dashboard'"
-                 :class="activepillstabs === 'dashboard' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'" class="inline-block rounded-lg px-4 py-3">
+                 :class="activepillstabs === 'dashboard' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'" 
+                 class="inline-block rounded-lg px-4 py-3 flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path>
                     </svg>
-                    Query with image
+                    Query by image
                 </a>
             </li>
         </ul>
@@ -288,7 +309,7 @@ Search Top Frames
                 <div x-data="{activebarwithicon:'profile'}">
                     <ul class="text-sm text-center text-black/50 dark:text-white/50 divide-x shadow dark:shadow-white/10 divide-black/20 dark:divide-white/20 rounded-lg sm:flex w-full">
                         <li class="w-full">
-                            <a href="javaScript:;" @click="activebarwithicon = 'profile'" :class="activebarwithicon === 'profile' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4 sm:rounded-l-lg">
+                            <a href="javaScript:;" style="padding:10px" @click="activebarwithicon = 'profile'" :class="activebarwithicon === 'profile' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4 sm:rounded-l-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 3px" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
                                     <path d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM92.69,56l16,16H40V56ZM216,200H40V88H216Zm-88-88a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V152H104a8,8,0,0,1,0-16h16V120A8,8,0,0,1,128,112Z"></path>
                                 </svg>
@@ -296,7 +317,7 @@ Search Top Frames
                             </a>
                         </li>
                         <li class="w-full">
-                            <a href="javaScript:;" @click="activebarwithicon = 'dashboard'" :class="activebarwithicon === 'dashboard' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4">
+                            <a href="javaScript:;" style="padding:10px" @click="activebarwithicon = 'dashboard'" :class="activebarwithicon === 'dashboard' ? 'text-white bg-black dark:bg-white dark:text-black' : 'text-black/40 bg-transparent hover:text-white hover:bg-black dark:text-white/40 dark:hover:text-white dark:hover:bg-white/5'" class="inline-flex w-full justify-center p-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 3px" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
                                     <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154.37,88H101.63C107,69.66,116,53.13,128,40.11,140,53.13,149,69.66,154.37,88Zm19.84,16h38.46a88.15,88.15,0,0,1,0,48H174.21a161.79,161.79,0,0,0,0-48Zm32.16-16H170.94a142.39,142.39,0,0,0-20.26-45A88.37,88.37,0,0,1,206.37,88ZM105.32,43A142.39,142.39,0,0,0,85.06,88H49.63A88.37,88.37,0,0,1,105.32,43ZM49.63,168H85.06a142.39,142.39,0,0,0,20.26,45A88.37,88.37,0,0,1,49.63,168Zm101.05,45a142.39,142.39,0,0,0,20.26-45h35.43A88.37,88.37,0,0,1,150.68,213Z"></path>
                                 </svg>
@@ -346,8 +367,7 @@ Search Top Frames
                 </div>
             </div>
         </div>
-    </div>
-        
+    </div>    
 </div>
 <div style="padding-top: 10px;">
     <input type="text" id="tag-name" placeholder="Nhập tên tag" style="width: 20%"
@@ -389,23 +409,23 @@ Search Top Frames
                 <!-- <i class="fas fa-times" onclick="closeImageModal()"></i> -->
                 
             </div>
-                <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-                    <img id="popup-image" alt="Popup Image" src="" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 5px;"/>
-                    <div class="bounding-boxes"></div>
-                </div>
-                <div class="bottom-toolbar">
-                    <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M200,32a8,8,0,0,0-8,8v69.23L72.43,34.45A15.95,15.95,0,0,0,48,47.88V208.12a16,16,0,0,0,24.43,13.43L192,146.77V216a8,8,0,0,0,16,0V40A8,8,0,0,0,200,32ZM64,207.93V48.05l127.84,80Z"></path>
-                        </svg>
-                    </i>
-                    <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M199.81,34a16,16,0,0,0-16.24.43L64,109.23V40a8,8,0,0,0-16,0V216a8,8,0,0,0,16,0V146.77l119.57,74.78A15.95,15.95,0,0,0,208,208.12V47.88A15.86,15.86,0,0,0,199.81,34ZM192,208,64.16,128,192,48.07Z"></path>
-                        </svg>
-                    </i>
-                    <input type="hidden" id="popup-frameidx" value="">
-                </div>
+            <div style="position: relative; display: inline-block; max-width: 100%; max-height: 100%;">
+                <img id="popup-image" alt="Popup Image" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                <div class="bounding-boxes" id="bounding-boxes"></div>
+            </div>
+            <div class="bottom-toolbar">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M200,32a8,8,0,0,0-8,8v69.23L72.43,34.45A15.95,15.95,0,0,0,48,47.88V208.12a16,16,0,0,0,24.43,13.43L192,146.77V216a8,8,0,0,0,16,0V40A8,8,0,0,0,200,32ZM64,207.93V48.05l127.84,80Z"></path>
+                    </svg>
+                </i>
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M199.81,34a16,16,0,0,0-16.24.43L64,109.23V40a8,8,0,0,0-16,0V216a8,8,0,0,0,16,0V146.77l119.57,74.78A15.95,15.95,0,0,0,208,208.12V47.88A15.86,15.86,0,0,0,199.81,34ZM192,208,64.16,128,192,48.07Z"></path>
+                    </svg>
+                </i>
+                <input type="hidden" id="popup-frameidx" value="">
+            </div>
         </div>
 
        <div class="details">
@@ -463,12 +483,15 @@ Search Top Frames
 </script>
 <script>
     function openImageModal(src, frameIdx) {
-        document.getElementById('popup-image').src = src;
+        const popupImage = document.getElementById('popup-image');
+        popupImage.src = src;
         document.getElementById('popup-frameidx').value = frameIdx;
     
+        // Fetch thông tin từ backend
         fetch(`/get_frame_info/${frameIdx}`)
             .then(response => response.json())
             .then(data => {
+                // Cập nhật metadata và thông tin khác
                 document.getElementById('metadata').innerHTML = `
                     <div><strong>Size:</strong> ${data.metadata.size_bytes} bytes</div>
                     <div><strong>Width:</strong> ${data.metadata.width}px</div>
@@ -481,32 +504,57 @@ Search Top Frames
                     <div><strong>ID:</strong> ${data.id}</div>
                     <div><strong>Path:</strong> ${data.filepath}</div>
                 `;
+                
+                // Xử lý khi hình ảnh đã tải xong
+                popupImage.onload = function () {
+                    const container = document.querySelector('.bounding-boxes');
     
-                const container = document.querySelector('.bounding-boxes');
-                container.innerHTML = ''; // Clear previous bounding boxes
-                const imgWidth = data.metadata.width;
-                const imgHeight = data.metadata.height;
+                    // Xóa các bounding box cũ
+                    while (container.firstChild) {
+                        container.removeChild(container.firstChild);
+                    }
     
-                data.detections.detections.forEach(detection => {
-                    const { label, bounding_box, confidence } = detection;
-                    const [x, y, width, height] = bounding_box;
+                    // Lấy kích thước tự nhiên và hiển thị của ảnh
+                    const naturalWidth = popupImage.naturalWidth;
+                    const naturalHeight = popupImage.naturalHeight;
+                    const displayWidth = popupImage.clientWidth;
+                    const displayHeight = popupImage.clientHeight;
     
-                    const box = document.createElement('div');
-                    box.className = 'bounding-box';
-                    box.style.left = `${x * 100}%`;
-                    box.style.top = `${y * 100}%`;
-                    box.style.width = `${width * 100}%`;
-                    box.style.height = `${height * 100}%`;
-                    box.innerHTML = `${label} (${(confidence * 100).toFixed(1)}%)`;
+                    // Tính toán tỉ lệ co (scale) và offset nếu cần căn giữa ảnh
+                    const scale = Math.min(displayWidth / naturalWidth, displayHeight / naturalHeight);
+                    const offsetX = (displayWidth - naturalWidth * scale) / 2;
+                    const offsetY = (displayHeight - naturalHeight * scale) / 2;
     
-                    container.appendChild(box);
-                });
+                    // Đảm bảo bounding boxes được vẽ sau khi ảnh hoàn thành render
+                    setTimeout(() => {
+                        data.detections.detections.forEach(detection => {
+                            const { label, bounding_box } = detection;
+                            const [x, y, width, height] = bounding_box;
+    
+                            const box = document.createElement('div');
+                            box.className = 'bounding-box';
+                            box.style.left = `${offsetX + x * naturalWidth * scale}px`;
+                            box.style.top = `${offsetY + y * naturalHeight * scale}px`;
+                            box.style.width = `${width * naturalWidth * scale}px`;
+                            box.style.height = `${height * naturalHeight * scale}px`;
+    
+                            // Thêm nhãn vào trong bounding box
+                            const labelSpan = document.createElement('span');
+                            labelSpan.innerText = label;
+                            box.appendChild(labelSpan);
+    
+                            // Thêm bounding box vào container
+                            container.appendChild(box);
+                        });
+                    }, 50); // Chờ 50ms để đảm bảo ảnh đã được render
+                };
             })
             .catch(err => console.error('Error fetching frame info:', err));
     
+        // Hiển thị overlay
         document.getElementById('overlay').style.display = 'flex';
     }
-    
+   
     function closeImageModal() {
         document.getElementById('overlay').style.display = 'none';
     }

@@ -1,65 +1,48 @@
 <style>
-    /* Container styles */
-.image-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.image-container img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-}
-
-/* Toolbar layout */
-.toolbar-layout {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.toolbar-layout i {
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.toolbar-layout i:hover {
-    color: #f39c12; /* Change to a bright color on hover */
-}
-
-/* Hover effect */
-.image-container:hover .toolbar-layout {
-    opacity: 1;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
-
+    .slidecontainer {
+        width: 100%; /* Width of the outside container */
+      }
+      
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;  
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #04AA6D;
+        cursor: pointer;
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #04AA6D;
+        cursor: pointer;
+      }
 </style>
-<div class="image-container">
-    <div class="toolbar-layout">
-        <i class="fas fa-check"></i>
-        <i class="fas fa-search"></i>
-        <i class="fas fa-cog"></i>
-        <i class="fas fa-times"></i>
-    </div>
-    <img src="https://via.placeholder.com/600x400" alt="Sample Image">
-    <div class="toolbar-layout">
-        <i class="fas fa-check"></i>
-        <i class="fas fa-search"></i>
-        <i class="fas fa-cog"></i>
-        <i class="fas fa-times"></i>
-    </div>
+<div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 </div>
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+    output.innerHTML = this.value;
+    }
+</script>
