@@ -1,1 +1,1 @@
-FRAMES_JSON = "output_samples.json" 
+output_subtitles.srt
