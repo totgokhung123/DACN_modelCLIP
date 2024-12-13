@@ -6,7 +6,7 @@ import underthesea
 from langdetect import detect
 
 class VietnameseTextProcessor:
-    def __init__(self, stopwords_path='E:\\Đồ án chuyên ngành\\source test\\vietnamese-stopwords.txt'):
+    def __init__(self, stopwords_path='D:\\code\\projects\\git\\DACN_modelCLIP-3\\vietnamese-stopwords.txt'):
         # Load danh sách stopwords
         if os.path.exists(stopwords_path):
             with open(stopwords_path, 'rb') as f:

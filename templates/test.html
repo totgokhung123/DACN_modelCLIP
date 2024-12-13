@@ -1,319 +1,221 @@
-<html>
- <head>
-  <title>
-   Popup Image Details
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-  
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .popup {
-            background-color: #222;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            width: 80%;
-            max-width: 1200px;
-            height: 80%;
-            max-height: 800px;
-            position: relative;
-        }
-        .image-section {
-            position: relative;
-            width: 70%;
-            padding: 5px;
-            box-sizing: border-box;
-            background-color: #1A1A1A; /* Set background color */
-        }
-        .image-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px; /* Optional: Add rounded corners to the image */
-        }
-        .details {
-            padding: 20px;
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-y: auto;
-            background-color: rgba(34, 34, 34, 0.8); /* Transparent background */
-        }
-        .details .metadata, .details .labels, .details .primitives {
-            margin-bottom: 20px;
-        }
-        .details .metadata div, .details .labels div, .details .primitives div {
-            margin-bottom: 5px;
-            padding: 10px;
-            background-color: #333333;
-            border: 1px solid #777;
-            border-radius: 5px;
-        }
-        .details .metadata div:last-child, .details .labels div:last-child, .details .primitives div:last-child {
-            margin-bottom: 0;
-        }
-        .toolbar {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 10px;
-        }
-        .toolbar i {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .toolbar i:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #000;
-        }
-        .bottom-toolbar {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        .bottom-toolbar i {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .bottom-toolbar i:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #000;
-        }
-  </style>
- </head>
+<!DOCTYPE html>  
+<html lang="vi">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Danh sách Frame</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">  
+    <style>  
+        .frame-container {  
+            position: relative;  
+            display: inline-block;  
+            margin: 10px;  
+        }  
+        .frame-link {  
+            display: block;  
+            position: relative;  
+        }  
+        .frame-link img {  
+            max-width: 200px; /* Kích thước tối đa của hình ảnh */  
+            height: auto;  
+            border: 2px solid #ccc;  
+            border-radius: 5px;  
+        }  
+        .frame-checkbox {  
+            position: absolute;  
+            top: 5px;  
+            left: 5px;  
+            z-index: 10;  
+        }  
+        .spinner {  
+            position: fixed;  
+            top: 50%;  
+            left: 50%;  
+            transform: translate(-50%, -50%);  
+            border: 4px solid rgba(255, 255, 255, 0.3);  
+            border-radius: 50%;  
+            border-top: 4px solid rgba(255, 69, 0, 1);  
+            width: 40px;  
+            height: 40px;  
+            animation: spin 1s linear infinite;  
+            z-index: 9999; /* Đảm bảo xuất hiện trên tất cả các phần tử khác */  
+        }  
+        
+        @keyframes spin {  
+            0% { transform: rotate(0deg); }  
+            100% { transform: rotate(360deg); }  
+        }  
+    </style>  
+</head>  
+<body class="bg-gray-100">  
+    <div class="container mx-auto p-4">  
+        <h1 class="text-2xl font-bold mb-5">Danh sách Frame</h1>  
+        <form id="tag-form" method="POST" action="/save-tags">  
+            <label for="tags">Thêm tag:</label>  
+            <input type="text" id="tags" name="tags" placeholder="Nhập các tag cách nhau bằng dấu phẩy">  
+            <input type="hidden" id="selected-frames" name="frame_ids" value="">  
+            <button type="submit">Lưu Tag</button>  
+        </form>  
+        
+        <form method="POST" class="mb-5">  
+            <input type="text" name="query" placeholder="Tìm kiếm..." class="border p-2 rounded">  
+            <input type="number" name="top_k" placeholder="Số lượng" class="border p-2 rounded" min="1" value="50">  
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Tìm kiếm</button>  
+        </form>  
+        <select id="tag-select" onchange="filterFramesByTag(this.value)">  
+            <option value="">-- Chọn tag --</option>  
+            <!-- Các tag sẽ được thêm vào đây qua JavaScript -->  
+        </select>  
+        <div id="loading-spinner" class="spinner" ></div> <!-- Spinner -->  
+        <div class="center-content" style="display: none;">  
+            {% if top_frames %}  
+                <div class="frame-gallery flex flex-wrap justify-start" style="padding: 10px">  
+                    {% for frame in top_frames %}  
+                    <div class="frame-container">  
+                        <input type="checkbox" class="frame-checkbox outline-Danger form-checkbox"   
+                               style="color: rgba(255, 69, 0, 0.7)"  
+                               data-frame-id="{{ frame.frameid }}"   
+                               data-frame="{{ frame }}"  
+                               onchange="updateSelectedFrames(this)">  
+        
+                        <a href="#" class="frame-link" data-frameidx="{{ frame.filepath.split('/')[-1].split('.')[0] }}"   
+                           onclick="openImageModal('{{ url_for('serve_frame', filename=frame.filepath.split('/')[-1]) }}', '{{ frame.filepath.split('/')[-1].split('.')[0] }}')">                   
+                            <img data-src="{{ url_for('serve_frame', filename=frame.filepath.split('/')[-1]) }}"   
+                                 alt="{{ frame.filepath }}"   
+                                 class="lazy-load"   
+                                 style="opacity: 0;">  
+                        </a>  
+                    </div>    
+                    {% endfor %}  
+                </div>  
+            {% else %}  
+                <p>Không có frame nào để hiển thị.</p>  
+            {% endif %}  
+        </div>      
+    </div>  
 
-  <div class="overlay">
-   <div class="popup">
-    <div class="image-section">
-        <div >
-            <div class="toolbar">
-             <i class="fas fa-check">
-             </i>
-             <i class="fas fa-search">
-             </i>
-             <i class="fas fa-cog">
-             </i>
-             <i class="fas fa-times">
-             </i>
-        </div>
-        <div>
-            <img alt="Person speaking on stage with text in the background" src="https://storage.googleapis.com/a1aa/image/QIuT2Vre7eimaE20HHNb8RLkYUkc08FAHeTegpNA9KVHDRWPB.jpg"/>
-        </div>
-        <div class="bottom-toolbar">
-            <i class="fas fa-arrow-left">
-            </i>
-            <i class="fas fa-arrow-right">
-            </i>
-        </div>
-    </div>
-    </div>
-    <div class="details">
-     <div class="metadata">
-      <div>
-       metadata.size_bytes: 417390
-      </div>
-      <div>
-       metadata.mime_type: image/jpeg
-      </div>
-      <div>
-       metadata.width: 1280
-      </div>
-      <div>
-       metadata.height: 720
-      </div>
-      <div>
-       metadata.num_channels: 3
-      </div>
-     </div>
-     <div class="labels">
-      <div>
-       tags: 1
-      </div>
-      <div>
-       label tags: 0
-      </div>
-      <div>
-       ground_truth: 1
-      </div>
-      <div>
-       detections: 8
-      </div>
-     </div>
-     <div class="primitives">
-      <div>
-       id: 66c60dae18c42148a05be686
-      </div>
-      <div>
-       path: E:\THI\HE\keyframes\L01_V002\0079.jpg
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
+    <script>  
+        function openImageModal(imageUrl, frameId) {  
+            // Tạo modal để hiển thị hình ảnh chi tiết  
+            const modal = document.createElement('div');  
+            modal.style.position = 'fixed';  
+            modal.style.top = '0';  
+            modal.style.left = '0';  
+            modal.style.width = '100%';  
+            modal.style.height = '100%';  
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';  
+            modal.style.display = 'flex';  
+            modal.style.justifyContent = 'center';  
+            modal.style.alignItems = 'center';  
+            modal.style.zIndex = '1000';  
 
-</html>
+            const img = document.createElement('img');  
+            img.src = imageUrl;  
+            img.style.maxWidth = '90%';  
+            img.style.maxHeight = '90%';  
+            modal.appendChild(img);  
 
+            const closeButton = document.createElement('button');  
+            closeButton.innerText = 'Đóng';  
+            closeButton.style.position = 'absolute';  
+            closeButton.style.top = '20px';  
+            closeButton.style.right = '20px';  
+            closeButton.style.backgroundColor = 'red';  
+            closeButton.style.color = 'white';  
+            closeButton.style.border = 'none';  
+            closeButton.style.padding = '10px';  
+            closeButton.style.cursor = 'pointer';  
+            closeButton.onclick = function() {  
+                document.body.removeChild(modal);  
+            };  
+            modal.appendChild(closeButton);  
 
-
-
-
-
-
-
-
-
-
-<!-- <div class="modal " id="video-modal">
-    <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
-    <video id="video-player" width="100%" controls>
-        <source src="" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ video.
-    </video>
-    
-    <div>
-        <button onclick="closeModal()">Đóng</button>
-    </div> 
-</div> -->
-<script>
-    document.querySelectorAll('.frame-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
+            document.body.appendChild(modal);  
+        }  
+    </script>  
+    <script>  
+        document.addEventListener("DOMContentLoaded", function() {  
+            const lazyImages = document.querySelectorAll(".lazy-load");  
             
-            const frameIdx = this.getAttribute('data-frameidx');
-            document.getElementById('frameidx-display').innerText = frameIdx;
+            const observer = new IntersectionObserver((entries, observer) => {  
+                entries.forEach(entry => {  
+                    if (entry.isIntersecting) {  
+                        const img = entry.target;  
+                        img.src = img.getAttribute('data-src');  
+                        img.onload = () => img.style.opacity = 1; // Phát hiện load xong để hiển thị  
+                        observer.unobserve(img);  
+                    }  
+                });  
+            });  
             
-            const videoPlayer = document.getElementById('video-player');
-            videoPlayer.querySelector('source').src = "/serve_video";
-            videoPlayer.load();
-            videoPlayer.currentTime = frameIdx / 25;
-            document.getElementById('video-modal').classList.add('show');
-            document.getElementById('overlay').classList.add('show');
-            document.querySelector('.center-content').classList.add('blur-background');
-        });
-    });
-    function closeModal() {
-        document.getElementById('video-modal').classList.remove('show');
-        document.getElementById('overlay').classList.remove('show');
-        document.querySelector('.center-content').classList.remove('blur-background');
-        const videoPlayer = document.getElementById('video-player');
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
-    }
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--  
-<div class="overlay " id="overlay"></div>
-<div class="modal" id="image-modal">
-    <div style="display: flex; width: 100%;">
-
-        <div style="flex: 1; position: relative;">
-            <div style="position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between;">
-                <button class="tool-button">🔍</button> 
-                <button class="tool-button">⏻</button> 
-            </div>
-            <img id="popup-image" src="" alt="Popup Image" style="width: 100%; height: auto;">
-            <div style="position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-between;">
-                <button class="tool-button">💾</button> 
-                <button class="tool-button">✏️</button> 
-            </div>
-        </div>
-
-
-        <div style="flex: 1; overflow-y: auto; padding: 10px; border-left: 1px solid #ddd;">
-            <div id="image-details">
+            lazyImages.forEach(image => {  
+                observer.observe(image);  
+            });  
+        });  
+        </script>  
+        <script>  
+            document.addEventListener("DOMContentLoaded", function() {  
+                const loadingSpinner = document.getElementById("loading-spinner");  
+                const content = document.querySelector(".center-content");  
+            
+                // Hiện spinner khi bắt đầu nạp trang  
+                loadingSpinner.style.display = "block";  
+            
+                // Giả lập thời gian tải dữ liệu từ MongoDB và xử lý  
+                // Thay thế đoạn này bằng việc nạp trang thực tế  
+                setTimeout(() => {  
+                    content.style.display = "block"; // Hiện thị nội dung  
+                    loadingSpinner.style.display = "none"; // Ẩn spinner  
+                }, 2000); // Thay thế bằng thời gian thực tế để tải dữ liệu  
+            });  
+        </script> 
+        <script>  
+            function updateSelectedFrames(checkbox) {  
+                const selectedFramesInput = document.getElementById("selected-frames");  
+                const selectedFrames = selectedFramesInput.value.split(",").filter(Boolean);  
                 
-            </div>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-        <button onclick="closeImageModal()">Đóng</button>
-    </div>
-</div>
--->
-<script>
-    // Lấy thông tin chi tiết từ file JSON
-    let imageDetails = {};
-
-    async function fetchImageDetails() {
-        try {
-            const response = await fetch('output_samples.json');
-            imageDetails = await response.json();
-        } catch (error) {
-            console.error('Error loading image details:', error);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        fetchImageDetails();
-
-        document.querySelectorAll('.frame-image-link').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                const frameIdx = this.getAttribute('data-frameidx');
-                const imagePath = this.querySelector('img').src;
-
-                // Hiển thị hình ảnh
-                document.getElementById('popup-image').src = imagePath;
-
-                // Hiển thị thông tin chi tiết
-                const detailsContainer = document.getElementById('image-details');
-                detailsContainer.innerHTML = ''; // Xóa thông tin cũ
-
-                const details = imageDetails[frameIdx] || {};
-                for (const [key, value] of Object.entries(details)) {
-                    const detailDiv = document.createElement('div');
-                    detailDiv.style.marginBottom = '10px';
-                    detailDiv.innerHTML = `<strong>${key}:</strong> ${value}`;
-                    detailsContainer.appendChild(detailDiv);
-                }
-
-                document.getElementById('image-modal').classList.add('show');
-                document.getElementById('image-overlay').classList.add('show');
-                document.querySelector('.center-content').classList.add('blur-background');
-            });
-        });
-    });
-
-    function closeImageModal() {
-        document.getElementById('image-modal').classList.remove('show');
-        document.getElementById('image-overlay').classList.remove('show');
-        document.querySelector('.center-content').classList.remove('blur-background');
-    }
-</script>
+                const frameId = checkbox.dataset.frameId; // Lấy frame_id từ dataset  
+            
+                if (checkbox.checked) {  
+                    selectedFrames.push(frameId); // Thêm frame_id vào danh sách  
+                } else {  
+                    const index = selectedFrames.indexOf(frameId);  
+                    if (index > -1) {  
+                        selectedFrames.splice(index, 1); // Xóa frame_id khỏi danh sách  
+                    }  
+                }  
+                
+                selectedFramesInput.value = selectedFrames.join(","); // Cập nhật input ẩn  
+            } 
+        </script>   
+        
+        
+        <script>  
+            document.addEventListener("DOMContentLoaded", function() {  
+                fetch('/tags')  // Lấy danh sách tag từ server  
+                    .then(response => response.json())  
+                    .then(tags => {  
+                        const tagSelect = document.getElementById("tag-select");  
+                        // Thêm từng tag vào dropdown  
+                        tags.forEach(tag => {  
+                            const option = document.createElement("option");  
+                            option.value = tag;  
+                            option.textContent = tag;  
+                            tagSelect.appendChild(option);  
+                        });  
+                    })  
+                    .catch(error => console.error('Error fetching tags:', error));  
+            });  
+            
+            function filterFramesByTag(tag) {  
+                // Gửi yêu cầu đến server để lấy frame theo tag  
+                fetch(`/frames?tag=${tag}`)  
+                    .then(response => response.json())  
+                    .then(frames => {  
+                        // Cập nhật nội dung hiển thị trên trang với các frame tương ứng  
+                        // Xử lý hiển thị frames  
+                    });  
+            }  
+        </script>  
+</body>  
+</html>
