@@ -16,9 +16,8 @@ from pathlib import Path
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
-# FRAMES_DIR = "E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo"
-FRAMES_JSON = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\output_samples.json" 
-EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy"
+FRAMES_JSON = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\output_samples.json" 
+EMBEDDINGS_FILE = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
@@ -44,7 +43,7 @@ app = Flask(__name__)
 #     print(a)
 #     return send_from_directory(FRAMES_DIR, filename)
 def load_frame_data():
-    with open('DACN_modelCLIP/output_samples.json', 'r') as file:
+    with open('DACN_modelCLIP-3/output_samples.json', 'r') as file:
         return json.load(file)
 
 # Lưu dữ liệu frames vào một biến toàn cục
@@ -75,7 +74,7 @@ def reset():
     return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
 
 def load_tags_from_file():
-    with open('DACN_modelCLIP/tags.json', 'r') as file:
+    with open('DACN_modelCLIP-3/tags.json', 'r') as file:
         return json.load(file)
 
 @app.route("/", methods=["GET", "POST"])
@@ -174,7 +173,7 @@ def search_top_frames(query, top_k):
 
     text_features = text_features / np.linalg.norm(text_features, axis=-1, keepdims=True)
 
-    embeddings = np.load("E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy")
+    embeddings = np.load("D:\\code\\projects\\git\\DACN_modelCLIP-3\\embedding\\image_embeddings.npy")
     embeddings = embeddings / np.linalg.norm(embeddings, axis=-1, keepdims=True)
 
     similarities = np.dot(embeddings, text_features.T).flatten()
@@ -213,7 +212,7 @@ def video_popup():
 
 @app.route('/serve_video')
 def serve_video():
-    return send_file("E:\\THIHE\\testfitty one\\videotesst.mp4", mimetype='video/mp4')
+    return send_file("D:\\code\\projects\\git\\Data\\video\\L01_V001.mp4", mimetype='video/mp4')
 
 @app.route("/save_tags", methods=["POST"])
 def save_tags():
@@ -258,12 +257,12 @@ def load_images():
             return jsonify({'images': tag['frames']})
     return jsonify({'images': []})
 
-TAGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\tags.json"
+TAGS_FILE = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\tags.json"
 # Lưu trữ tags toàn cục để sử dụng trong các route
 TAGS = load_tags_from_file()
 @app.route('/get-tags', methods=['GET'])
 def get_tags():
-    with open('DACN_modelCLIP/tags.json', 'r') as file:
+    with open('DACN_modelCLIP-3/tags.json', 'r') as file:
         data = json.load(file)
     return jsonify(data)
 

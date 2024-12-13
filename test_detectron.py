@@ -26,7 +26,7 @@ cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-InstanceSegmentation/casc
 predictor = DefaultPredictor(cfg)
 
 # Đọc ảnh và phát hiện đối tượng
-image_path = 'D:\\code\\projects\\git\\Data\\khung_hinh_1_1\\30466.jpg'
+image_path = 'E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo\\3034.jpg'
 image = cv2.imread(image_path)
 outputs = predictor(image)
 
