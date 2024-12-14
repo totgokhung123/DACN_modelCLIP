@@ -6,7 +6,7 @@ import underthesea
 from langdetect import detect
 
 class VietnameseTextProcessor:
-    def __init__(self, stopwords_path='E:\\Đồ án chuyên ngành\\source test\\vietnamese-stopwords.txt'):
+    def __init__(self, stopwords_path='D:\\code\\projects\\git\\DACN_modelCLIP-3\\vietnamese-stopwords.txt'):
         # Load danh sách stopwords
         if os.path.exists(stopwords_path):
             with open(stopwords_path, 'rb') as f:
@@ -71,17 +71,14 @@ class VietnameseTextProcessor:
         text = self.lowercasing(text)
         text = self.remove_stopwords(text)
         text = self.text_normalization(text)
-        # Dịch sang tiếng Anh nếu cần
+
         text = self.translate_to_english(text)
         return text
 
-# Ví dụ sử dụng lớp
 if __name__ == "__main__":
     processor = VietnameseTextProcessor()
 
-    # Văn bản tiếng Việt cần xử lý
-    query_text = "I got new bag"#"Tôi rất thích xem các bức ảnh đẹp về thiên nhiên."
+    query_text ="a bag of cleaned chicken" #"một túi thịt gà làm sạch"#"Tôi rất thích xem các bức ảnh đẹp về thiên nhiên."
 
-    # Tiền xử lý và dịch sang tiếng Anh
     processed_text = processor.preprocess_and_translate(query_text)
     print("Văn bản đã xử lý và dịch:", processed_text)

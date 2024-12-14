@@ -22,7 +22,7 @@ def extract_frames_from_video(video_path, output_dir, threshold=30.0):
         
         #frames_to_capture = {'begin': start_frame, 'middle': middle_frame, 'end': end_frame}
         frames_to_capture = {middle_frame}
-        
+           
         for frame_idx in frames_to_capture:
             cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx)
             ret, frame = cap.read()
@@ -30,7 +30,6 @@ def extract_frames_from_video(video_path, output_dir, threshold=30.0):
                 frame_filename = os.path.join(output_dir, f"{frame_idx}.jpg")
                 cv2.imwrite(frame_filename, frame)
                 print(f"da luu {frame_filename}")
-
         cap.release()
     video_manager.release()
     print("Trich xuat hoan tat.")

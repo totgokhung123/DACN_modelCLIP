@@ -29,8 +29,6 @@ with open(output_srt_path, "w", encoding="utf-8") as srt_file:
         srt_file.write(f"{i+1}\n{start:.2f} --> {end:.2f}\n{text}\n\n")
 print(f"Hoàn thành! Phụ đề đã lưu tại {output_srt_path}")
 os.remove(audio_path)
-
-
 # from pywhispercpp.model import Model
 
 # model = Model('large', n_threads=2)
