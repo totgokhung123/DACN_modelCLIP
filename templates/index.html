@@ -256,7 +256,13 @@ Search Top Frames
     z-index: 12; 
     pointer-events: none;
 }
-    
+.bounding-box.text-detection {  
+    border-color: blue !important;  
+}  
+
+.bounding-box.object-detection {  
+    border-color: red !important;  
+} 
 </style>
 <div class="border border-black/10 dark:border-white/10 p-5 rounded-md" style="padding: 10px">
     <div x-data="{activepillstabs:'profile'}">
@@ -380,9 +386,21 @@ Search Top Frames
         <div class="frame-gallery"  style="justify-content: space-between; padding: 10px">
             {% for frame in top_frames %}
             <div class="frame-container">
-                <input type="checkbox" class="frame-checkbox outline-Danger form-checkbox" style="color: rgba(255, 69, 0, 0.7)" data-frame="{{ frame }}" >
-                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}" onclick="openImageModal('{{ url_for('serve_frame',filename=frame)}}','{{frame.split('.')[0]}}')">                   
-                    <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}" >
+                <input type="checkbox" class="frame-checkbox outline-Danger form-checkbox" style="color: rgba(255, 69, 0, 0.7)" 
+                        data-frame-id="{{ frame.frameid }}"   
+                        data-frame="{{ frame }}"  
+                        onchange="updateSelectedFrames(this)" >
+                <a href="#" class="frame-link" data-frameidx="{{ frame.filepath.split('/')[-1].split('.')[0] }}" 
+                onclick="openImageModal(  
+                    '{{ url_for('serve_frame', filename=frame.filepath.split('/')[-1]) }}',  
+                    '{{ frame.filepath | replace('\\', '\\\\') }}',  
+                    '{{ frame.filepath.split('/')[-1].split('.')[0] }}',  
+                    '{{ frame.get('frameidx', '') }}'  
+                )">                      
+                    <img data-src="{{ url_for('serve_frame', filename=frame.filepath.split('/')[-1]) }}"   
+                                 alt="{{ frame.filepath }}"   
+                                 class="lazy-load"   
+                                 style="opacity: 0;"> 
                 </a>
             </div>
             {% endfor %}
@@ -430,13 +448,13 @@ Search Top Frames
 
        <div class="details">
           <div class="metadata" id="metadata">
-             <!-- Metadata sẽ được chèn vào đây -->
+             
           </div>
           <div class="labels" id="labels">
-             <!-- Labels sẽ được chèn vào đây -->
+             
           </div>
           <div class="primitives" id="primitives">
-             <!-- Primitives sẽ được chèn vào đây -->
+             
           </div>
        </div>
     </div>
@@ -457,19 +475,110 @@ Search Top Frames
 
 
 <script>
-    function openVideoModal() {
-        const frameIdx = document.getElementById('popup-frameidx').value;
+    function openVideoModal() {  
+        console.log("Opening Video Modal");  
         
-        // Hiển thị popup video
-        document.getElementById('frameidx-display').innerText = frameIdx;
+        // Lấy frame path từ popup image  
+        const framePath = document.getElementById('popup-image').src;  
         
-        const videoPlayer = document.getElementById('video-player');
-        videoPlayer.querySelector('source').src = "/serve_video";
-        videoPlayer.load();
-        videoPlayer.currentTime = frameIdx / 25;
-        document.getElementById('video-modal').classList.add('show');
-        document.getElementById('overlay').classList.add('show');
-    }
+        console.log("Frame Path:", framePath);  
+    
+        // Trích xuất frame index từ path  
+        const frameIdx = extractFrameNumberFromPath(framePath);  
+    
+        console.log("Extracted Frame Index:", frameIdx);  
+    
+        // Hiển thị frame index  
+        const frameidxDisplay = document.getElementById('frameidx-display');  
+        if (frameidxDisplay) {  
+            frameidxDisplay.innerText = frameIdx;  
+        }  
+        
+        const videoPlayer = document.getElementById('video-player');  
+        const videoSource = videoPlayer ? videoPlayer.querySelector('source') : null;  
+        
+        if (!videoPlayer || !videoSource) {  
+            console.error("KHÔNG TÌM THẤY VIDEO PLAYER HOẶC SOURCE");  
+            alert("Lỗi video player");  
+            return;  
+        }  
+        
+        // Thêm frame index vào URL  
+        const url = `/serve_video?frame_idx=${encodeURIComponent(frameIdx)}`;  
+        
+        videoSource.src = url;  
+        
+        console.log("Video Source URL:", videoSource.src);  
+        
+        // Tải và phát video  
+        videoPlayer.load();  
+        
+        // Xử lý lỗi khi load video  
+        videoPlayer.onerror = function() {  
+            console.error("LỖI LOAD VIDEO");  
+            alert("Không thể load video");  
+        };  
+    
+        videoPlayer.onloadeddata = function() {  
+            console.log("VIDEO LOADED SUCCESSFULLY");  
+            videoPlayer.play();  
+        };  
+        
+        // Hiển thị modal video  
+        const videoModal = document.getElementById('video-modal');  
+        const overlay = document.getElementById('overlay');  
+        
+        if (videoModal) videoModal.classList.add('show');  
+        if (overlay) overlay.classList.add('show');  
+    }  
+    
+    function extractFrameNumberFromPath(path) {  
+        console.log("Original path:", path);  
+        
+        // Giải mã URL  
+        try {  
+            path = decodeURIComponent(path);  
+            console.log("Decoded path:", path);  
+        } catch (error) {  
+            console.error("Lỗi giải mã URL:", error);  
+        }  
+        
+        // Các pattern để trích xuất số  
+        const patterns = [  
+            /\/(\d+)\.jpg$/,          // Matching number before .jpg ở cuối đường dẫn  
+            /khung_hinh_1_1[/\\](\d+)\.jpg$/,  // Matching trong thư mục khung_hinh_1_1  
+            /[/\\](\d+)\.jpg$/,        // Matching number trước .jpg  
+            /(\d+)\.jpg$/,             // Matching toàn bộ số trước .jpg  
+            /[/\\](\d+)[^/]*$/,        // Matching number trước phần mở rộng  
+            /(\d+)$/                   // Matching pure number  
+        ];  
+        
+        for (let pattern of patterns) {  
+            const match = path.match(pattern);  
+            if (match) {  
+                console.log("Matched pattern:", pattern);  
+                console.log("Extracted number:", match[1]);  
+                return match[1];  
+            }  
+        }  
+        
+        // Nếu không match, thử lấy tên file không có phần mở rộng  
+        try {  
+            const filename = path.split('/').pop().split('\\').pop();  
+            const filenameWithoutExt = filename.split('.')[0];  
+            const frameNum = parseInt(filenameWithoutExt);  
+            
+            if (!isNaN(frameNum)) {  
+                console.log("Extracted from filename:", frameNum);  
+                return frameNum;  
+            }  
+        } catch (error) {  
+            console.error("Lỗi trích xuất frame number:", error);  
+        }  
+        
+        console.warn("Không tìm thấy frame number");  
+        return null;  
+    }     
     
     function closeModal() {
         document.getElementById('video-modal').classList.remove('show');
@@ -482,98 +591,185 @@ Search Top Frames
 
 </script>
 <script>
-    function openImageModal(src, frameIdx) {
-        const popupImage = document.getElementById('popup-image');
-        popupImage.src = src;
-        document.getElementById('popup-frameidx').value = frameIdx;
+    function openImageModal(src, frameId) {  
+        const popupImage = document.getElementById('popup-image');  
+        popupImage.src = src;  
+        document.getElementById('popup-frameidx').value = frameId;  
     
-        // Fetch thông tin từ backend
-        fetch(`/get_frame_info/${frameIdx}`)
-            .then(response => response.json())
-            .then(data => {
-                // Cập nhật metadata và thông tin khác
-                document.getElementById('metadata').innerHTML = `
-                    <div><strong>Size:</strong> ${data.metadata.size_bytes} bytes</div>
-                    <div><strong>Width:</strong> ${data.metadata.width}px</div>
-                    <div><strong>Height:</strong> ${data.metadata.height}px</div>
-                `;
-                document.getElementById('labels').innerHTML = `
-                    <div><strong>Tags:</strong> ${data.tags.join(', ')}</div>
-                `;
-                document.getElementById('primitives').innerHTML = `
-                    <div><strong>ID:</strong> ${data.id}</div>
-                    <div><strong>Path:</strong> ${data.filepath}</div>
-                `;
+        // Fetch thông tin từ backend  
+        fetch(`/get_frame_info/${frameId}`)  
+            .then(response => response.json())  
+            .then(data => {  
+                // Cập nhật metadata  
+                document.getElementById('metadata').innerHTML = `  
+                    <div><strong>Size:</strong> ${formatFileSize(data.metadata.size_bytes)}</div>  
+                    <div><strong>Dimensions:</strong> ${data.metadata.width}x${data.metadata.height} px</div>  
+                    <div><strong>Mime Type:</strong> ${data.metadata.mime_type}</div>  
+                    <div><strong>Channels:</strong> ${data.metadata.num_channels}</div>  
+                `;  
+    
+                // Cập nhật tags  
+                document.getElementById('labels').innerHTML = `  
+                    <div><strong>Tags:</strong> ${data.tags ? data.tags.join(', ') : 'No tags'}</div>  
+                    <div><strong>Video Source:</strong> ${data.video}</div>  
+                    <div><strong>Frame ID:</strong> ${data.frameid}</div>  
+                `;  
+    
+                // Cập nhật thông tin primitive  
+                document.getElementById('primitives').innerHTML = `  
+                    <div><strong>Path:</strong> ${data.filepath}</div>  
+                `;  
                 
-                // Xử lý khi hình ảnh đã tải xong
-                popupImage.onload = function () {
-                    const container = document.querySelector('.bounding-boxes');
+                // Xử lý khi hình ảnh đã tải xong  
+                popupImage.onload = function () {  
+                    const container = document.querySelector('.bounding-boxes');  
     
-                    // Xóa các bounding box cũ
-                    while (container.firstChild) {
-                        container.removeChild(container.firstChild);
-                    }
+                    // Xóa các bounding box cũ  
+                    while (container.firstChild) {  
+                        container.removeChild(container.firstChild);  
+                    }  
     
-                    // Lấy kích thước tự nhiên và hiển thị của ảnh
-                    const naturalWidth = popupImage.naturalWidth;
-                    const naturalHeight = popupImage.naturalHeight;
-                    const displayWidth = popupImage.clientWidth;
-                    const displayHeight = popupImage.clientHeight;
+                    // Lấy kích thước tự nhiên và hiển thị của ảnh  
+                    const naturalWidth = popupImage.naturalWidth;  
+                    const naturalHeight = popupImage.naturalHeight;  
+                    const displayWidth = popupImage.clientWidth;  
+                    const displayHeight = popupImage.clientHeight;  
     
-                    // Tính toán tỉ lệ co (scale) và offset nếu cần căn giữa ảnh
-                    const scale = Math.min(displayWidth / naturalWidth, displayHeight / naturalHeight);
-                    const offsetX = (displayWidth - naturalWidth * scale) / 2;
-                    const offsetY = (displayHeight - naturalHeight * scale) / 2;
+                    // Tính toán tỉ lệ co (scale) và offset  
+                    const scaleX = displayWidth / naturalWidth;  
+                    const scaleY = displayHeight / naturalHeight;  
+                    const scale = Math.min(scaleX, scaleY);  
+                    
+                    const scaledWidth = naturalWidth * scale;  
+                    const scaledHeight = naturalHeight * scale;  
+                    
+                    const offsetX = (displayWidth - scaledWidth) / 2;  
+                    const offsetY = (displayHeight - scaledHeight) / 2;  
     
-                    // Đảm bảo bounding boxes được vẽ sau khi ảnh hoàn thành render
-                    setTimeout(() => {
-                        data.detections.detections.forEach(detection => {
-                            const { label, bounding_box } = detection;
-                            const [x, y, width, height] = bounding_box;
+                    // Vẽ bounding boxes cho text detection  
+                    if (data.detections.text_detections.detections) {  
+                        data.detections.text_detections.detections.forEach(detection => {  
+                            const { label, bounding_box, confidence } = detection;  
+                            const [x, y, width, height] = bounding_box;  
     
-                            const box = document.createElement('div');
-                            box.className = 'bounding-box';
-                            box.style.left = `${offsetX + x * naturalWidth * scale}px`;
-                            box.style.top = `${offsetY + y * naturalHeight * scale}px`;
-                            box.style.width = `${width * naturalWidth * scale}px`;
-                            box.style.height = `${height * naturalHeight * scale}px`;
+                            const box = document.createElement('div');  
+                            box.className = 'bounding-box text-detection';  
+                            box.style.position = 'absolute';  
+                            box.style.border = '2px solid blue';  
+                            box.style.left = `${offsetX + x * scaledWidth}px`;  
+                            box.style.top = `${offsetY + y * scaledHeight}px`;  
+                            box.style.width = `${width * scaledWidth}px`;  
+                            box.style.height = `${height * scaledHeight}px`;  
+                            box.style.pointerEvents = 'none';  
+                            box.style.zIndex = '10';  
     
-                            // Thêm nhãn vào trong bounding box
-                            const labelSpan = document.createElement('span');
-                            labelSpan.innerText = label;
-                            box.appendChild(labelSpan);
+                            // Thêm nhãn vào trong bounding box  
+                            const labelSpan = document.createElement('span');  
+                            labelSpan.innerText = `${label} (${(confidence * 100).toFixed(2)}%)`;  
+                            labelSpan.style.position = 'absolute';  
+                            labelSpan.style.top = '-20px';  
+                            labelSpan.style.left = '0';  
+                            labelSpan.style.backgroundColor = 'blue';  
+                            labelSpan.style.color = 'white';  
+                            labelSpan.style.padding = '2px 5px';  
+                            labelSpan.style.fontSize = '12px';  
+                            box.appendChild(labelSpan);  
     
-                            // Thêm bounding box vào container
-                            container.appendChild(box);
-                        });
-                    }, 50); // Chờ 50ms để đảm bảo ảnh đã được render
-                };
-            })
-            .catch(err => console.error('Error fetching frame info:', err));
+                            container.appendChild(box);  
+                        });  
+                    }  
     
-        // Hiển thị overlay
-        document.getElementById('overlay').style.display = 'flex';
+                    // Vẽ bounding boxes cho object detection  
+                    if (data.detections.object_detections.detections) {  
+                        data.detections.object_detections.detections.forEach(detection => {  
+                            const { label, bounding_box, confidence } = detection;  
+                            const [x, y, width, height] = bounding_box;  
+    
+                            const box = document.createElement('div');  
+                            box.className = 'bounding-box object-detection';  
+                            box.style.position = 'absolute';  
+                            box.style.border = '2px solid red';  
+                            box.style.left = `${offsetX + x * scaledWidth}px`;  
+                            box.style.top = `${offsetY + y * scaledHeight}px`;  
+                            box.style.width = `${width * scaledWidth}px`;  
+                            box.style.height = `${height * scaledHeight}px`;  
+                            box.style.pointerEvents = 'none';  
+                            box.style.zIndex = '10';  
+    
+                            // Thêm nhãn vào trong bounding box  
+                            const labelSpan = document.createElement('span');  
+                            labelSpan.innerText = `${label} (${(confidence * 100).toFixed(2)}%)`;  
+                            labelSpan.style.position = 'absolute';  
+                            labelSpan.style.top = '-20px';  
+                            labelSpan.style.left = '0';  
+                            labelSpan.style.backgroundColor = 'red';  
+                            labelSpan.style.color = 'white';  
+                            labelSpan.style.padding = '2px 5px';  
+                            labelSpan.style.fontSize = '12px';  
+                            box.appendChild(labelSpan);  
+    
+                            container.appendChild(box);  
+                        });  
+                    }  
+                };  
+            })  
+            .catch(err => {  
+                console.error('Error fetching frame info:', err);  
+                // Xử lý khi không lấy được thông tin  
+                document.getElementById('metadata').innerHTML = 'Không thể tải thông tin';  
+            });  
+    
+        // Hiển thị overlay  
+        document.getElementById('overlay').style.display = 'flex';  
+    }  
+
+    function formatFileSize(bytes) {  
+        if (bytes === 0) return '0 Bytes';  
+        const k = 1024;  
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];  
+        const i = Math.floor(Math.log(bytes) / Math.log(k));  
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];  
     }
    
     function closeImageModal() {
         document.getElementById('overlay').style.display = 'none';
     }
 </script>
-
-
-
-
-
-
-
-
-
+<script>  
+    document.addEventListener("DOMContentLoaded", function() {  
+        const lazyImages = document.querySelectorAll(".lazy-load");  
+        
+        const observer = new IntersectionObserver((entries, observer) => {  
+            entries.forEach(entry => {  
+                if (entry.isIntersecting) {  
+                    const img = entry.target;  
+                    img.src = img.getAttribute('data-src');  
+                    img.onload = () => img.style.opacity = 1; // Phát hiện load xong để hiển thị  
+                    observer.unobserve(img);  
+                }  
+            });  
+        });  
+        
+        lazyImages.forEach(image => {  
+            observer.observe(image);  
+        });  
+    });  
+</script>  
+<script>  
+    document.addEventListener("DOMContentLoaded", function() {  
+        const loadingSpinner = document.getElementById("loading-spinner");  
+        const content = document.querySelector(".center-content");  
+        loadingSpinner.style.display = "block";  
+        setTimeout(() => {  
+            content.style.display = "block"; 
+            loadingSpinner.style.display = "none"; 
+        }, 2000); 
+    });  
+</script> 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const checkboxes = document.querySelectorAll(".frame-checkbox");
         let lastCheckedIndex = null; 
-
- 
         function handleShiftClick(currentIndex, isChecked) {
             if (lastCheckedIndex !== null) {
  
@@ -714,19 +910,16 @@ Search Top Frames
                     const frameContainer = document.createElement('div');
                     frameContainer.className = 'frame-container';
 
-                    // Input checkbox
                     const checkbox = document.createElement('input');
                     checkbox.type = 'checkbox';
                     checkbox.className = 'frame-checkbox outline-primary form-checkbox';
                     checkbox.dataset.frame = frame;
 
-                    // Link chứa ảnh
                     const link = document.createElement('a');
                     link.href = '#';
                     link.className = 'frame-link';
                     link.dataset.frameidx = frame.split('.')[0];
 
-                    // Ảnh
                     const img = document.createElement('img');
                     img.src = `/frames/${frame}`;
                     img.alt = frame;
@@ -751,7 +944,7 @@ Search Top Frames
                 this.activeMenu = this.activeMenu === menu ? null : menu;
             },
             loadTags() {
-                // Tải danh sách tag từ backend
+
                 fetch('/get-tags')
                     .then(response => response.json())
                     .then(data => {
