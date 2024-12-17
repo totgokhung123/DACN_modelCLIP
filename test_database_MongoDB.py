@@ -108,5 +108,5 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['testmongoDACN']  # Tên database
 collection = db['frames']      # Tên collection
 # Sử dụng hàm
-folder_path = 'D:\\code\\projects\\git\\Data\\khung_hinh_1_1'
+folder_path = 'E:\\THIHE\\testfitty one\\SegmentVideo\\seg1\\SegmentVideo'
 process_images_in_folder(folder_path, collection, max_workers=8)
