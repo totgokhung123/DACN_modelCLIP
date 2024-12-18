@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory, Response,send_file,url_for, jsonify,abort
+from flask import Flask, request, render_template,stream_with_context, send_from_directory, Response,send_file,url_for, jsonify,abort
 import os
 from io import BytesIO
 import numpy as np
@@ -12,12 +12,19 @@ import re
 import json
 from word_processing import VietnameseTextProcessor
 from pathlib import Path
-
+from segment_video import extract_frames_from_video
+from JSON_sample_DOC import process_images_in_folder
+from embedding import extract_and_save_embeddings_from_folder
+import tempfile
+import shutil
+import subprocess
+from concurrent.futures import ThreadPoolExecutor
+import time  
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
-FRAMES_JSON = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\output_samples.json" 
-EMBEDDINGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy"
+FRAMES_JSON = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\output_samples.json" 
+EMBEDDINGS_FILE = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\embedding\\image_embeddings.npy"
 text_processor = VietnameseTextProcessor()
 
 embeddings = np.load(EMBEDDINGS_FILE)
@@ -26,7 +33,6 @@ def load_frames_from_json(json_path):
     """Load danh sách tên file từ file JSON."""
     with open(json_path, 'r', encoding='utf-8') as file:
         samples = json.load(file)
-    # Trả về danh sách tên file (không bao gồm đường dẫn đầy đủ)
     return [os.path.basename(sample["filepath"]) for sample in samples if "filepath" in sample]
 def load_frames_mapping_from_json(json_path):
     with open(json_path, "r", encoding="utf-8") as f:
@@ -43,17 +49,13 @@ app = Flask(__name__)
 #     print(a)
 #     return send_from_directory(FRAMES_DIR, filename)
 def load_frame_data():
-    with open('DACN_modelCLIP/output_samples.json', 'r') as file:
+    with open('output_samples.json', 'r',encoding="utf-8") as file:
         return json.load(file)
-
-# Lưu dữ liệu frames vào một biến toàn cục
 frames_data = load_frame_data()
 
 @app.route('/get_frame_info/<frameidx>')
 def get_frame_info(frameidx):
-    # Tìm frame tương ứng theo frameidx
     frame_info = next((frame for frame in frames_data if str(frame['frameidx']) == frameidx), None)
-
     if frame_info:
         return jsonify(frame_info)
     else:
@@ -74,8 +76,11 @@ def reset():
     return render_template("index.html", query=None, top_frames=all, tags=[t['tag'] for t in tags])
 
 def load_tags_from_file():
-    with open('DACN_modelCLIP/tags.json', 'r') as file:
+    with open('tags.json', 'r',encoding="utf-8") as file:
         return json.load(file)
+
+
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -173,7 +178,7 @@ def search_top_frames(query, top_k):
 
     text_features = text_features / np.linalg.norm(text_features, axis=-1, keepdims=True)
 
-    embeddings = np.load("E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\embedding\\image_embeddings.npy")
+    embeddings = np.load("D:\\code\\projects\\git\\DACN_modelCLIP-3\\embedding\\image_embeddings.npy")
     embeddings = embeddings / np.linalg.norm(embeddings, axis=-1, keepdims=True)
 
     similarities = np.dot(embeddings, text_features.T).flatten()
@@ -201,7 +206,6 @@ def process_image_query(image_file, image_url):
 def search_top_frames_by_image(image_features, top_k):
     similarities = np.dot(embeddings, image_features.T).flatten()
     top_indices = np.argsort(similarities)[-top_k:][::-1]
-
     all_files = load_frames_from_json(FRAMES_JSON)
     return [all_files[i] for i in top_indices]
 @app.route('/video_popup')
@@ -211,7 +215,7 @@ def video_popup():
 
 @app.route('/serve_video')
 def serve_video():
-    return send_file("E:\\THIHE\\testfitty one\\videotesst.mp4", mimetype='video/mp4')
+    return send_file("D:\\code\\projects\\git\\Data\\video\\L01_V001.mp4", mimetype='video/mp4')
 
 @app.route("/save_tags", methods=["POST"])
 def save_tags():
@@ -252,16 +256,15 @@ def load_images():
         tags = load_tags_from_file()
         tag = next((t for t in tags if t['tag'] == tag_name), None)
         if tag:
-            # Trả về danh sách tên ảnh theo tag
+
             return jsonify({'images': tag['frames']})
     return jsonify({'images': []})
 
-TAGS_FILE = "E:\\Đồ án chuyên ngành\\resource\\DACN_modelCLIP\\tags.json"
-# Lưu trữ tags toàn cục để sử dụng trong các route
+TAGS_FILE = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\tags.json"
 TAGS = load_tags_from_file()
 @app.route('/get-tags', methods=['GET'])
 def get_tags():
-    with open('DACN_modelCLIP/tags.json', 'r') as file:
+    with open('tags.json', 'r', encoding="utf-8") as file:
         data = json.load(file)
     return jsonify(data)
 
@@ -269,5 +272,70 @@ def save_tags_to_file(tags):
     with open(TAGS_FILE, "w") as f:
         json.dump(tags, f)
 
+BASE_DIR = "D:\\code\\projects\\git\\DACN_modelCLIP-3\\static\\processed_frames"
+
+@app.route("/upload-video", methods=["POST"])
+def upload_video():
+    """Endpoint upload video -> trích xuất frames -> xử lý JSON metadata."""
+    video_file = request.files.get("video")
+    if not video_file:
+        return jsonify({"error": "No video uploaded"}), 400
+
+    video_name = os.path.splitext(video_file.filename)[0]
+    video_dir = os.path.join(BASE_DIR, video_name)  
+    print(video_dir)
+    os.makedirs(video_dir, exist_ok=True)
+    video_path = os.path.join(video_dir, video_file.filename)
+    video_file.save(video_path)
+
+    def run_progress():
+        total_steps = 3  
+        step = 0  
+        yield f"data:{{'step': 'extracting_frames', 'progress': {int((step / total_steps) * 100)}}}\n\n"
+        time.sleep(0.5)
+        
+        try:
+            extract_frames_from_video(video_path, video_dir, threshold=30.0)
+        except Exception as e:
+            yield f"data:{{'error': 'Error extracting frames: {e}'}}\n\n"
+            return
+        step += 1
+        yield f"data:{{'step': 'extracting_frames', 'progress': {int((step / total_steps) * 100)}}}\n\n"
+        yield f"data:{{'step': 'extracting_embeddings', 'progress': {int((step / total_steps) * 100)}}}\n\n"
+        time.sleep(0.5)
+        try:
+            model_name = "ViT-B/32"
+            output_file = "D:/code/projects/git/DACN_modelCLIP-3/embedding/image_embeddings.npy"
+            extract_and_save_embeddings_from_folder(video_dir, model_name, output_file)
+        except Exception as e:
+            yield f"data:{{'error': 'Error extracting embeddings: {e}'}}\n\n"
+            return
+        step += 1
+        yield f"data:{{'step': 'extracting_embeddings', 'progress': {int((step / total_steps) * 100)}}}\n\n"
+        yield f"data:{{'step': 'processing_json', 'progress': {int((step / total_steps) * 100)}}}\n\n"
+        time.sleep(0.5)
+        try:
+            json_output_path = "output_samples.json"
+            process_images_in_folder(video_dir, json_output_path)  # Xử lý metadata cho frames
+        except Exception as e:
+            yield f"data:{{'error': 'Error processing JSON: {e}'}}\n\n"
+            return
+        step += 1
+        yield f"data:{{'step': 'processing_json', 'progress': {int((step / total_steps) * 100)}}}\n\n"
+        yield f"data:{{'step': 'completed'}}\n\n"
+    return Response(stream_with_context(run_progress()), mimetype="text/event-stream")
+
+# def save_frames_permanently(temp_output_dir):
+#     """Copy các frame từ thư mục tạm sang thư mục chính."""
+#     permanent_dir = "static/processed_frames"
+#     os.makedirs(permanent_dir, exist_ok=True)
+
+#     for file in tqdm(os.listdir(temp_output_dir), desc="Saving Frames"):
+#         if file.endswith(".jpg"):
+#             src = os.path.join(temp_output_dir, file)
+#             dst = os.path.join(permanent_dir, file)
+#             shutil.copy(src, dst)
+
+#     print(f"Frames have been saved to {permanent_dir}")
 if __name__ == "__main__":
     app.run(debug=True)

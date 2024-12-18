@@ -283,6 +283,16 @@ Search Top Frames
                     Query by image
                 </a>
             </li>
+            <li class="mr-2" >
+                <a href="javascript:;" style="padding: 10px"
+                :class="activepillstabs === '' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'"
+                class="inline-block rounded-lg px-4 py-3 flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M128,120a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V160H104a8,8,0,0,1,0-16h16V128A8,8,0,0,1,128,120ZM232,88V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V64A16,16,0,0,1,40,48H93.33a16.12,16.12,0,0,1,9.6,3.2L130.67,72H216A16,16,0,0,1,232,88ZM40,96H93.33l21.34-16L93.33,64H40Zm176-8H130.67l-27.74,20.8a16.12,16.12,0,0,1-9.6,3.2H40v88H216Z"></path>
+                    </svg>
+                    Thêm video
+                </a>
+            </li>
         </ul>
         <div class="tab-content mt-3 text-[13px]">
             <div x-show="activepillstabs === 'profile'" class="">
@@ -373,6 +383,26 @@ Search Top Frames
     <input type="text" id="tag-name" placeholder="Nhập tên tag" style="width: 20%"
     class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"/>
     <button id="save-tags-button" class="btn py-2 px-5 text-[15px]">Lưu Tag</button>
+    <form id="video-upload-form" enctype="multipart/form-data" method="POST" action="/upload-video">
+        <label for="video-input" class="inline-block rounded-lg px-4 py-3 flex cursor-pointer" 
+               style="color: #fff; background-color: #ff7402;">
+            <input type="file" id="video-input" name="video" accept="video/*" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M128,120a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V160H104a8,8,0,0,1,0-16h16V128A8,8,0,0,1,128,120Z"/>
+            </svg>
+            Thêm video
+        </label>
+    </form>
+</div>
+<!-- Progress bar -->
+<div id="progress-video-container" style="display: none;">
+    <label>Đang trích xuất frames từ video...</label>
+    <progress id="progress-video" value="0" max="100" style="width: 100%;background-color:aqua"></progress>
+</div>
+
+<div id="progress-json-container" style="display: none;">
+    <label>Đang xử lý JSON dữ liệu các frames...</label>
+    <progress id="progress-json" value="0" max="100" style="width: 100%;background-color:rgb(255, 115, 0)"></progress>
 </div>
 
 <div class="center-content">
@@ -559,15 +589,51 @@ Search Top Frames
         document.getElementById('overlay').style.display = 'none';
     }
 </script>
-
-
-
-
-
-
-
-
-
+<script>
+    document.getElementById("video-input").addEventListener("change", function () {
+        const formData = new FormData(document.getElementById("video-upload-form"));
+        const xhr = new XMLHttpRequest();
+    
+        const progressVideoBar = document.getElementById("progress-video");
+        const progressJSONBar = document.getElementById("progress-json");
+    
+        const videoContainer = document.getElementById("progress-video-container");
+        const jsonContainer = document.getElementById("progress-json-container");
+    
+        videoContainer.style.display = "block";
+        progressVideoBar.value = 0;
+    
+        // Kết nối Server-Sent Events (SSE)
+        const eventSource = new EventSource("/upload-video");
+    
+        eventSource.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+    
+            if (data.step === "extracting_frames") {
+                progressVideoBar.value = data.progress;
+                if (data.progress === 100) {
+                    videoContainer.style.display = "none";
+                    jsonContainer.style.display = "block";
+                }
+            } else if (data.step === "processing_json") {
+                progressJSONBar.value = data.progress;
+                if (data.progress === 100) {
+                    jsonContainer.style.display = "none";
+                    alert("Xử lý thành công tất cả các bước!");
+                    eventSource.close();
+                }
+            } else if (data.step === "completed") {
+                eventSource.close();
+                alert("Xử lý video và frames hoàn thành!");
+            } else if (data.error) {
+                alert(`Lỗi: ${data.error}`);
+                eventSource.close();
+            }
+        };
+    
+        fetch("/upload-video", { method: "POST", body: formData });
+    });
+    </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const checkboxes = document.querySelectorAll(".frame-checkbox");
