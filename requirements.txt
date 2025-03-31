@@ -1,0 +1,31 @@
+# Flask - Web framework để xây dựng API
+Flask>=2.0.0  
+
+# OpenAI CLIP - Mô hình tìm kiếm hình ảnh & văn bản
+git+https://github.com/openai/CLIP.git  
+
+# Torch & Torchvision - Thư viện cho mô hình học sâu
+torch>=1.8.0  
+torchvision>=0.9.0  
+
+# Xử lý video & hình ảnh  
+opencv-python>=4.5.3.56  
+Pillow>=8.2.0  
+
+# Xử lý dữ liệu  
+numpy>=1.19.2  
+pandas>=1.3.0  
+
+# Hỗ trợ cho CLIP  
+ftfy>=6.0.0  
+regex>=2021.4.4  
+tqdm>=4.50.2  
+
+# Flask-CORS - Cho phép frontend truy cập API từ nguồn khác  
+Flask-CORS>=3.0.10  
+
+# Requests - Hỗ trợ tải ảnh từ URL  
+requests>=2.26.0  
+
+# Base64 - Hỗ trợ xử lý hình ảnh từ URL dạng base64  
+base64>=1.0.0  
