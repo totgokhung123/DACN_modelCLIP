@@ -29,3 +29,5 @@ requests>=2.26.0
 
 # Base64 - Hỗ trợ xử lý hình ảnh từ URL dạng base64  
 base64>=1.0.0  
+# PySceneDetect - Phát hiện cảnh trong video  
+scenedetect>=0.6.0  
