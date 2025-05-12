@@ -1,44 +1,48 @@
-{% extends "index_snow_test_4.html" %}
-{% block title %}
-Search Top Frames
-{% endblock %}
-
-{% block content %}
 <style>
-    .frame-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .frame-gallery img {
-        width: 150px;
-        height: auto;
+    .slidecontainer {
+        width: 100%; /* Width of the outside container */
+      }
+      
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;  
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%; 
+        background: #04AA6D;
         cursor: pointer;
-    }
-    .center-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #04AA6D;
+        cursor: pointer;
       }
 </style>
-<div  class="center-content">
-    <h1>Search Top 50 Frames</h1>
-    <form method="POST" action="/">
-        <input type="text" name="query" placeholder="Enter your query" required>
-        <input type="number" name="top_k" placeholder="Enter top K" required min="1">
-        <button type="submit">Search</button>
-    </form>
-
-    {% if top_frames %}
-        <div class="frame-gallery" style="justify-content: space-between; padding: 10px">
-            {% for frame in top_frames %}
-                <a href="/video_popup?frameidx={{ frame.split('.')[0] }}">
-                    <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}">
-                </a>
-            {% endfor %}
-        </div>
-    {% endif %}
+<div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 </div>
-{% endblock %}
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+    output.innerHTML = this.value;
+    }
+</script>
