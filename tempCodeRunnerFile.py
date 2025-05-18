@@ -1,1 +1,1 @@
-FRAMES_JSON = "output_samples.json" 
+óm các frame theo video và lấy top 3 frame cho mỗi video

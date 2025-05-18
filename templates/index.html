@@ -5,7 +5,6 @@ Search Top Frames
 
 {% block content %}
 <style>
-
     .frame-container {
         position: relative;
         display: inline-block;
@@ -283,6 +282,29 @@ Search Top Frames
                     Query by image
                 </a>
             </li>
+            <li class="mr-2">
+                <a href="/video_search" style="padding: 10px"
+                class="inline-block rounded-lg px-4 py-3 flex text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216v96L183.36,120.73a16,16,0,0,0-19.72,0L136,144.73,104.64,120.73a16,16,0,0,0-19.72,0L40,152Zm0,144V172l57.36-41.15L128,154.58l26.64-23.73L216,172v28Z"></path>
+                    </svg>
+                    Video Search
+                </a>
+            </li>
+
+
+            <!-- <li class="mr-2" >
+                <a href="javascript:;" style="padding: 10px"
+                @click="activepillstabs = activepillstabs === 'keyword' ? '' : 'keyword'"
+                 :class="activepillstabs === 'keyword' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'"
+                :class="activepillstabs === '' ? 'text-white dark:text-black bg-black dark:bg-white' : 'text-black/40 dark:text-white/40 bg-transparent hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'"
+                class="inline-block rounded-lg px-4 py-3 flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M128,120a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V160H104a8,8,0,0,1,0-16h16V128A8,8,0,0,1,128,120ZM232,88V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V64A16,16,0,0,1,40,48H93.33a16.12,16.12,0,0,1,9.6,3.2L130.67,72H216A16,16,0,0,1,232,88ZM40,96H93.33l21.34-16L93.33,64H40Zm176-8H130.67l-27.74,20.8a16.12,16.12,0,0,1-9.6,3.2H40v88H216Z"></path>
+                    </svg>
+                    Search keyword
+                </a>
+            </li> -->
         </ul>
         <div class="tab-content mt-3 text-[13px]">
             <div x-show="activepillstabs === 'profile'" class="">
@@ -291,19 +313,29 @@ Search Top Frames
                         <div style="display: flex;flex-direction: row">
                             <input type="text" name="query" placeholder="Enter your query"
                             class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
-                            required>
+                            >
+                            <input type="text" id="keyword" name="keyword" placeholder="Enter your keyword for text or object ..."
+                            class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                            >
                             <input type="number" name="top_k" placeholder="Enter top K" style="width: 40%"
                             class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
                             required min="1">
-                            <button type="submit" class="btn py-2 px-5 text-[15px]">Search</button>                            
-                        </div>                        
+                            <button type="submit" class="btn py-2 px-5 text-[15px]">Search</button>            
+                        </div>  
+                        <div>
+                            <label for="min_confidence">Set Confidence:</label>
+                            <input type="range" style="background-color: rgb(221,72,0);" name="min_confidence" id="min_confidence" value="0" min="0" max="1" step="0.01" oninput="this.nextElementSibling.value = this.value">
+                            <output>0</output>
+                        </div>     
+                                                          
                     </form>
                     <form method="GET" action="/reset">
                         <div style="display: flex;flex-direction: row">
                             <button type="submit" class="btn py-2 px-5 text-[15px]">Reset</button>
                         </div>   
                     </form>
-                </div>        
+                </div>     
+                
             </div>
             <div x-show="activepillstabs === 'dashboard'" class="">
                 <div x-data="{activebarwithicon:'profile'}">
@@ -366,6 +398,26 @@ Search Top Frames
                     </div>
                 </div>
             </div>
+            <!-- <div x-show="activepillstabs === 'keyword'" class="">
+                <div style="display: flex;flex-direction: row">
+                    <form method="POST" action="/" style="width: 120%">
+                        <div style="display: flex;flex-direction: row">
+                            <input type="text" id="keyword" name="keyword" placeholder="Enter your keyword for text or object ..."
+                            class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                            required>
+                            <input type="number" name="top_k" placeholder="Enter top K" style="width: 40%"
+                            class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"
+                            required min="1">
+                            <button type="submit" class="btn py-2 px-5 text-[15px]">Search</button>                            
+                        </div>                        
+                    </form>
+                    <form method="GET" action="/reset">
+                        <div style="display: flex;flex-direction: row">
+                            <button type="submit" class="btn py-2 px-5 text-[15px]">Reset</button>
+                        </div>   
+                    </form>
+                </div>        
+            </div> -->
         </div>
     </div>    
 </div>
@@ -373,6 +425,26 @@ Search Top Frames
     <input type="text" id="tag-name" placeholder="Nhập tên tag" style="width: 20%"
     class="form-input py-2.5 px-4 w-full text-black dark:text-white border border-black/10 dark:border-white/10 rounded-lg placeholder:text-black/20 dark:placeholder:text-white/20 focus:border-black dark:focus:border-white/10 focus:ring-0 focus:shadow-none;"/>
     <button id="save-tags-button" class="btn py-2 px-5 text-[15px]">Lưu Tag</button>
+    <form id="video-upload-form" enctype="multipart/form-data" method="POST" action="/upload-video">
+        <label for="video-input" class="inline-block rounded-lg px-4 py-3 flex cursor-pointer" 
+               style="color: #fff; background-color: rgb(221,72,0);">
+            <input type="file" id="video-input" name="video" accept="video/*" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 3px" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM92.69,56l16,16H40V56ZM216,200H40V88H216Zm-88-88a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V152H104a8,8,0,0,1,0-16h16V120A8,8,0,0,1,128,112Z"></path>
+            </svg>
+            Thêm video
+        </label>
+    </form>
+</div>
+<!-- Progress bar -->
+<div id="progress-video-container" style="display: none;">
+    <label>Đang trích xuất frames từ video...</label>
+    <progress id="progress-video" value="0" max="100" style="width: 100%;background-color:aqua"></progress>
+</div>
+
+<div id="progress-json-container" style="display: none;">
+    <label>Đang xử lý JSON dữ liệu các frames...</label>
+    <progress id="progress-json" value="0" max="100" style="width: 100%;background-color:rgb(255, 115, 0)"></progress>
 </div>
 
 <div class="center-content">
@@ -381,7 +453,7 @@ Search Top Frames
             {% for frame in top_frames %}
             <div class="frame-container">
                 <input type="checkbox" class="frame-checkbox outline-Danger form-checkbox" style="color: rgba(255, 69, 0, 0.7)" data-frame="{{ frame }}" >
-                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}" onclick="openImageModal('{{ url_for('serve_frame',filename=frame)}}','{{frame.split('.')[0]}}')">                   
+                <a href="#" class="frame-link" data-frameidx="{{ frame.split('.')[0] }}" data-frame-src="{{ url_for('serve_frame', filename=frame) }}" onclick="openImageModal(this.getAttribute('data-frame-src'), this.getAttribute('data-frameidx'))">                   
                     <img src="{{ url_for('serve_frame', filename=frame) }}" alt="{{ frame }}" >
                 </a>
             </div>
@@ -398,7 +470,7 @@ Search Top Frames
             <div class="toolbar">
                 <i  onclick="openVideoModal()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M164.44,105.34l-48-32A8,8,0,0,0,104,80v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,129.05V95l25.58,17ZM216,40H40A16,16,0,0,0,24,56V168a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,128H40V56H216V168Zm16,40a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Z"></path>
+                        <path d="M164.44,105.34l-48-32A8,8,0,0,0,104,80v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,129.05V95l25.58,17ZM216,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM92.69,56l16,16H40V56ZM216,200H40V88H216Zm-88-88a8,8,0,0,1,8,8v16h16a8,8,0,0,1,0,16H136v16a8,8,0,0,1-16,0V152H104a8,8,0,0,1,0-16h16V120A8,8,0,0,1,128,112Z"></path>
                     </svg>
                 </i>                    
                 <i onclick="closeImageModal()"> 
@@ -438,37 +510,71 @@ Search Top Frames
           <div class="primitives" id="primitives">
              <!-- Primitives sẽ được chèn vào đây -->
           </div>
+          <div class="controls">
+            <label>
+                <input type="checkbox" style="border-color:#8b8585" class="form-checkbox outline-danger" id="toggle-bounding-box" onchange="toggleBoundingBoxVisibility()" />
+                Show Bounding Boxes
+            </label>
+          </div>
        </div>
     </div>
 </div>
 
-<!-- popup video -->
-
-    <div class="modal " id="video-modal">
-        <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
-        <video id="video-player" width="100%" height="auto" style="max-height: calc(100% - 80px);border-radius: 5px;"  controls>
-            <source src="" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video.
-        </video>
-        <div>
-            <button onclick="closeModal()">Đóng</button>
-        </div> 
-    </div>
-
+<!-- Popup Video Modal -->
+<div class="modal" id="video-modal">
+    <h1>Video Bắt đầu từ Khung <span id="frameidx-display"></span></h1>
+    <video id="video-player" width="100%" height="auto" style="max-height: calc(100% - 80px);border-radius: 5px;" controls>
+        <source src="" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+    </video>
+    <div>
+        <button onclick="closeModal()">Đóng</button>
+    </div> 
+</div>
 
 <script>
     function openVideoModal() {
         const frameIdx = document.getElementById('popup-frameidx').value;
-        
-        // Hiển thị popup video
         document.getElementById('frameidx-display').innerText = frameIdx;
-        
         const videoPlayer = document.getElementById('video-player');
-        videoPlayer.querySelector('source').src = "/serve_video";
-        videoPlayer.load();
-        videoPlayer.currentTime = frameIdx / 25;
-        document.getElementById('video-modal').classList.add('show');
-        document.getElementById('overlay').classList.add('show');
+        
+        // Hiển thị loading nếu có
+        if (document.getElementById('progress-video-container')) {
+            document.getElementById('progress-video-container').style.display = 'block';
+        }
+        
+        // Lấy đường dẫn video từ API
+        fetch(`/get_video_path/${frameIdx}`)
+            .then(response => response.json())
+            .then(data => {
+                if (document.getElementById('progress-video-container')) {
+                    document.getElementById('progress-video-container').style.display = 'none';
+                }
+                
+                if (data.error) {
+                    alert(`Lỗi: ${data.error}`);
+                    return;
+                }
+                
+                videoPlayer.querySelector('source').src = data.video_path;
+                videoPlayer.load();
+                
+                document.getElementById('video-modal').classList.add('show');
+                document.getElementById('overlay').classList.add('show');
+                
+                // Đặt thời gian video sau khi video đã sẵn sàng
+                videoPlayer.addEventListener('loadedmetadata', function() {
+                    videoPlayer.currentTime = frameIdx / 25;
+                    videoPlayer.play();
+                }, { once: true });
+            })
+            .catch(error => {
+                if (document.getElementById('progress-video-container')) {
+                    document.getElementById('progress-video-container').style.display = 'none';
+                }
+                console.error('Error:', error);
+                alert('Không thể tải video');
+            });
     }
     
     function closeModal() {
@@ -479,19 +585,16 @@ Search Top Frames
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
     }
-
 </script>
 <script>
     function openImageModal(src, frameIdx) {
         const popupImage = document.getElementById('popup-image');
         popupImage.src = src;
         document.getElementById('popup-frameidx').value = frameIdx;
-    
-        // Fetch thông tin từ backend
         fetch(`/get_frame_info/${frameIdx}`)
             .then(response => response.json())
             .then(data => {
-                // Cập nhật metadata và thông tin khác
+
                 document.getElementById('metadata').innerHTML = `
                     <div><strong>Size:</strong> ${data.metadata.size_bytes} bytes</div>
                     <div><strong>Width:</strong> ${data.metadata.width}px</div>
@@ -504,12 +607,8 @@ Search Top Frames
                     <div><strong>ID:</strong> ${data.id}</div>
                     <div><strong>Path:</strong> ${data.filepath}</div>
                 `;
-                
-                // Xử lý khi hình ảnh đã tải xong
                 popupImage.onload = function () {
                     const container = document.querySelector('.bounding-boxes');
-    
-                    // Xóa các bounding box cũ
                     while (container.firstChild) {
                         container.removeChild(container.firstChild);
                     }
@@ -527,7 +626,7 @@ Search Top Frames
     
                     // Đảm bảo bounding boxes được vẽ sau khi ảnh hoàn thành render
                     setTimeout(() => {
-                        data.detections.detections.forEach(detection => {
+                        data.text_detections.detections.forEach(detection => {
                             const { label, bounding_box } = detection;
                             const [x, y, width, height] = bounding_box;
     
@@ -547,6 +646,27 @@ Search Top Frames
                             container.appendChild(box);
                         });
                     }, 50); // Chờ 50ms để đảm bảo ảnh đã được render
+                    setTimeout(() => {
+                        data.object_detections.detections.forEach(detection => {
+                            const { label, bounding_box } = detection;
+                            const [x, y, width, height] = bounding_box;
+    
+                            const box = document.createElement('div');
+                            box.className = 'bounding-box';
+                            box.style.left = `${offsetX + x * naturalWidth * scale}px`;
+                            box.style.top = `${offsetY + y * naturalHeight * scale}px`;
+                            box.style.width = `${width * naturalWidth * scale}px`;
+                            box.style.height = `${height * naturalHeight * scale}px`;
+    
+                            // Thêm nhãn vào trong bounding box
+                            const labelSpan = document.createElement('span');
+                            labelSpan.innerText = label;
+                            box.appendChild(labelSpan);
+    
+                            // Thêm bounding box vào container
+                            container.appendChild(box);
+                        });
+                    }, 50);
                 };
             })
             .catch(err => console.error('Error fetching frame info:', err));
@@ -554,20 +674,62 @@ Search Top Frames
         // Hiển thị overlay
         document.getElementById('overlay').style.display = 'flex';
     }
-   
+    function toggleBoundingBoxVisibility() {
+        const container = document.querySelector('.bounding-boxes');
+        const isChecked = document.getElementById('toggle-bounding-box').checked;
+        if (container) {
+            container.style.display = isChecked ? 'block' : 'none';
+        }
+    }
     function closeImageModal() {
         document.getElementById('overlay').style.display = 'none';
     }
 </script>
-
-
-
-
-
-
-
-
-
+<script>
+    document.getElementById("video-input").addEventListener("change", function () {
+        const formData = new FormData(document.getElementById("video-upload-form"));
+        const xhr = new XMLHttpRequest();
+    
+        const progressVideoBar = document.getElementById("progress-video");
+        const progressJSONBar = document.getElementById("progress-json");
+    
+        const videoContainer = document.getElementById("progress-video-container");
+        const jsonContainer = document.getElementById("progress-json-container");
+    
+        videoContainer.style.display = "block";
+        progressVideoBar.value = 0;
+    
+        // Kết nối Server-Sent Events (SSE)
+        const eventSource = new EventSource("/upload-video");
+    
+        eventSource.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+    
+            if (data.step === "extracting_frames") {
+                progressVideoBar.value = data.progress;
+                if (data.progress === 100) {
+                    videoContainer.style.display = "none";
+                    jsonContainer.style.display = "block";
+                }
+            } else if (data.step === "processing_json") {
+                progressJSONBar.value = data.progress;
+                if (data.progress === 100) {
+                    jsonContainer.style.display = "none";
+                    alert("Xử lý thành công tất cả các bước!");
+                    eventSource.close();
+                }
+            } else if (data.step === "completed") {
+                eventSource.close();
+                alert("Xử lý video và frames hoàn thành!");
+            } else if (data.error) {
+                alert(`Lỗi: ${data.error}`);
+                eventSource.close();
+            }
+        };
+    
+        fetch("/upload-video", { method: "POST", body: formData });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const checkboxes = document.querySelectorAll(".frame-checkbox");
@@ -691,7 +853,7 @@ Search Top Frames
         <ul x-cloak x-show="activeMenu === 'dashboard'" x-collapse class="sub-menu flex flex-col gap-1 text-black dark:text-white/80" >
             {% for tag in tags %}
             <li>                
-                <a href="{{ url_for('index') }}?tag_name={{ tag }}" class="text-blue-500 hover:underline" style="justify-content: space-between">                                 
+                <a href="{{ url_for('frame_search') }}?tag_name={{ tag }}" class="text-blue-500 hover:underline" style="justify-content: space-between">                                 
                     <input type="checkbox" class="outline-Danger form-checkbox">
                     <span>{{ tag }}</span>              
                 </a>  
